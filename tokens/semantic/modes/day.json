@@ -115,7 +115,7 @@
     "surface": {
       "strong": {
         "$type": "color",
-        "$value": "{palette.nimbus.n100}"
+        "$value": "{palette.nimbus.n600}"
       },
       "default": {
         "$type": "color",
@@ -787,16 +787,16 @@
         "$value": "{text.inverse.default}"
       },
       "link": {
-        "$value": "{core.brand.gratitude.default}"
+        "$value": "{palette.gratitude.g500}"
       },
       "danger": {
-        "$value": "{core.utility.destructive.default}"
+        "$value": "{palette.remedy.r500}"
       },
       "success": {
-        "$value": "{core.brand.gratitude.default}"
+        "$value": "{palette.gratitude.g500}"
       },
       "warning": {
-        "$value": "{core.utility.caution.default}"
+        "$value": "{palette.oasis.o500}"
       }
     },
     "border": {
@@ -810,10 +810,10 @@
         "$value": "{border.surface.strong}"
       },
       "focus": {
-        "$value": "{border.utility.constructive.strong}"
+        "$value": "{palette.gratitude.g500}"
       },
       "danger": {
-        "$value": "{border.utility.destructive.strong}"
+        "$value": "{palette.remedy.r500}"
       }
     }
   }

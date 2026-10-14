@@ -48,9 +48,15 @@
   --color-bg-action-danger-disabled: var(--palette-nimbus-n600);
   --color-fg-muted: var(--text-neutral-subtle);
   --color-fg-disabled: var(--text-neutral-disabled);
+  --color-fg-link: var(--palette-lumen-l300);
+  --color-fg-danger: var(--palette-remedy-r100);
+  --color-fg-success: var(--palette-lumen-l300);
+  --color-fg-warning: var(--palette-oasis-o100);
   --color-border-subtle: var(--border-surface-subtle);
   --color-border-default: var(--border-surface-default);
-  --border-surface-strong: var(--palette-nimbus-n500);
+  --color-border-focus: var(--palette-lumen-l300);
+  --color-border-danger: var(--palette-remedy-r100);
+  --border-surface-strong: var(--palette-nimbus-n100);
   --border-inverse-strong: var(--palette-nimbus-n100);
   --border-static-dark: var(--palette-nimbus-n600);
   --border-static-light: var(--palette-nimbus-n50);
@@ -169,13 +175,7 @@
   --color-bg-feedback-warning-subtle: var(--background-utility-caution);
   --color-fg-default: var(--text-neutral-default);
   --color-fg-on-action: var(--text-inverse-default);
-  --color-fg-link: var(--core-brand-gratitude-default);
-  --color-fg-danger: var(--core-utility-destructive-default);
-  --color-fg-success: var(--core-brand-gratitude-default);
-  --color-fg-warning: var(--core-utility-caution-default);
   --color-border-strong: var(--border-surface-strong);
-  --color-border-focus: var(--border-utility-constructive-strong);
-  --color-border-danger: var(--border-utility-destructive-strong);
   --button-primary-bg-disabled: var(--color-bg-action-primary-disabled);
   --button-primary-fg-disabled: var(--color-fg-disabled);
   --button-primary-border-disabled: var(--color-bg-action-primary-disabled);
@@ -187,16 +187,25 @@
   --button-danger-bg-disabled: var(--color-bg-action-danger-disabled);
   --button-danger-fg-disabled: var(--color-fg-disabled);
   --button-danger-border-disabled: var(--color-bg-action-danger-disabled);
+  --button-focus-ring-color: var(--color-border-focus);
   --card-container-border: var(--color-border-default);
   --card-body-fg: var(--color-fg-muted);
   --input-default-fg-disabled: var(--color-fg-disabled);
   --input-default-fg-loading: var(--color-fg-muted);
   --input-default-border-default: var(--color-border-default);
+  --input-default-border-focus-visible: var(--color-border-focus);
+  --input-default-border-active: var(--color-border-focus);
   --input-default-border-disabled: var(--color-border-subtle);
   --input-default-border-loading: var(--color-border-default);
   --input-error-fg-disabled: var(--color-fg-disabled);
   --input-error-fg-loading: var(--color-fg-muted);
+  --input-error-border-default: var(--color-border-danger);
+  --input-error-border-hover: var(--color-border-danger);
+  --input-error-border-focus-visible: var(--color-border-danger);
+  --input-error-border-active: var(--color-border-danger);
   --input-error-border-disabled: var(--color-border-subtle);
+  --input-error-border-loading: var(--color-border-danger);
+  --input-focus-ring-color: var(--color-border-focus);
   --button-primary-bg-default: var(--color-bg-action-primary-default);
   --button-primary-bg-hover: var(--color-bg-action-primary-hover);
   --button-primary-bg-focus-visible: var(--color-bg-action-primary-default);
@@ -240,7 +249,6 @@
   --button-danger-border-focus-visible: var(--color-bg-action-danger-default);
   --button-danger-border-active: var(--color-bg-action-danger-active);
   --button-danger-border-loading: var(--color-bg-action-danger-default);
-  --button-focus-ring-color: var(--color-border-focus);
   --card-container-bg: var(--color-bg-surface-raised);
   --card-title-fg: var(--color-fg-default);
   --input-default-bg-default: var(--color-bg-surface-raised);
@@ -254,8 +262,6 @@
   --input-default-fg-focus-visible: var(--color-fg-default);
   --input-default-fg-active: var(--color-fg-default);
   --input-default-border-hover: var(--color-border-strong);
-  --input-default-border-focus-visible: var(--color-border-focus);
-  --input-default-border-active: var(--color-border-focus);
   --input-error-bg-default: var(--color-bg-feedback-danger-subtle);
   --input-error-bg-hover: var(--color-bg-feedback-danger-subtle);
   --input-error-bg-focus-visible: var(--color-bg-feedback-danger-subtle);
@@ -266,12 +272,6 @@
   --input-error-fg-hover: var(--color-fg-default);
   --input-error-fg-focus-visible: var(--color-fg-default);
   --input-error-fg-active: var(--color-fg-default);
-  --input-error-border-default: var(--color-border-danger);
-  --input-error-border-hover: var(--color-border-danger);
-  --input-error-border-focus-visible: var(--color-border-danger);
-  --input-error-border-active: var(--color-border-danger);
-  --input-error-border-loading: var(--color-border-danger);
-  --input-focus-ring-color: var(--color-border-focus);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -321,9 +321,15 @@
     --color-bg-action-danger-disabled: var(--palette-nimbus-n600);
     --color-fg-muted: var(--text-neutral-subtle);
     --color-fg-disabled: var(--text-neutral-disabled);
+    --color-fg-link: var(--palette-lumen-l300);
+    --color-fg-danger: var(--palette-remedy-r100);
+    --color-fg-success: var(--palette-lumen-l300);
+    --color-fg-warning: var(--palette-oasis-o100);
     --color-border-subtle: var(--border-surface-subtle);
     --color-border-default: var(--border-surface-default);
-    --border-surface-strong: var(--palette-nimbus-n500);
+    --color-border-focus: var(--palette-lumen-l300);
+    --color-border-danger: var(--palette-remedy-r100);
+    --border-surface-strong: var(--palette-nimbus-n100);
     --border-inverse-strong: var(--palette-nimbus-n100);
     --border-static-dark: var(--palette-nimbus-n600);
     --border-static-light: var(--palette-nimbus-n50);
@@ -442,13 +448,7 @@
     --color-bg-feedback-warning-subtle: var(--background-utility-caution);
     --color-fg-default: var(--text-neutral-default);
     --color-fg-on-action: var(--text-inverse-default);
-    --color-fg-link: var(--core-brand-gratitude-default);
-    --color-fg-danger: var(--core-utility-destructive-default);
-    --color-fg-success: var(--core-brand-gratitude-default);
-    --color-fg-warning: var(--core-utility-caution-default);
     --color-border-strong: var(--border-surface-strong);
-    --color-border-focus: var(--border-utility-constructive-strong);
-    --color-border-danger: var(--border-utility-destructive-strong);
     --button-primary-bg-disabled: var(--color-bg-action-primary-disabled);
     --button-primary-fg-disabled: var(--color-fg-disabled);
     --button-primary-border-disabled: var(--color-bg-action-primary-disabled);
@@ -460,16 +460,25 @@
     --button-danger-bg-disabled: var(--color-bg-action-danger-disabled);
     --button-danger-fg-disabled: var(--color-fg-disabled);
     --button-danger-border-disabled: var(--color-bg-action-danger-disabled);
+    --button-focus-ring-color: var(--color-border-focus);
     --card-container-border: var(--color-border-default);
     --card-body-fg: var(--color-fg-muted);
     --input-default-fg-disabled: var(--color-fg-disabled);
     --input-default-fg-loading: var(--color-fg-muted);
     --input-default-border-default: var(--color-border-default);
+    --input-default-border-focus-visible: var(--color-border-focus);
+    --input-default-border-active: var(--color-border-focus);
     --input-default-border-disabled: var(--color-border-subtle);
     --input-default-border-loading: var(--color-border-default);
     --input-error-fg-disabled: var(--color-fg-disabled);
     --input-error-fg-loading: var(--color-fg-muted);
+    --input-error-border-default: var(--color-border-danger);
+    --input-error-border-hover: var(--color-border-danger);
+    --input-error-border-focus-visible: var(--color-border-danger);
+    --input-error-border-active: var(--color-border-danger);
     --input-error-border-disabled: var(--color-border-subtle);
+    --input-error-border-loading: var(--color-border-danger);
+    --input-focus-ring-color: var(--color-border-focus);
     --button-primary-bg-default: var(--color-bg-action-primary-default);
     --button-primary-bg-hover: var(--color-bg-action-primary-hover);
     --button-primary-bg-focus-visible: var(--color-bg-action-primary-default);
@@ -513,7 +522,6 @@
     --button-danger-border-focus-visible: var(--color-bg-action-danger-default);
     --button-danger-border-active: var(--color-bg-action-danger-active);
     --button-danger-border-loading: var(--color-bg-action-danger-default);
-    --button-focus-ring-color: var(--color-border-focus);
     --card-container-bg: var(--color-bg-surface-raised);
     --card-title-fg: var(--color-fg-default);
     --input-default-bg-default: var(--color-bg-surface-raised);
@@ -527,8 +535,6 @@
     --input-default-fg-focus-visible: var(--color-fg-default);
     --input-default-fg-active: var(--color-fg-default);
     --input-default-border-hover: var(--color-border-strong);
-    --input-default-border-focus-visible: var(--color-border-focus);
-    --input-default-border-active: var(--color-border-focus);
     --input-error-bg-default: var(--color-bg-feedback-danger-subtle);
     --input-error-bg-hover: var(--color-bg-feedback-danger-subtle);
     --input-error-bg-focus-visible: var(--color-bg-feedback-danger-subtle);
@@ -539,11 +545,5 @@
     --input-error-fg-hover: var(--color-fg-default);
     --input-error-fg-focus-visible: var(--color-fg-default);
     --input-error-fg-active: var(--color-fg-default);
-    --input-error-border-default: var(--color-border-danger);
-    --input-error-border-hover: var(--color-border-danger);
-    --input-error-border-focus-visible: var(--color-border-danger);
-    --input-error-border-active: var(--color-border-danger);
-    --input-error-border-loading: var(--color-border-danger);
-    --input-focus-ring-color: var(--color-border-focus);
   }
 }

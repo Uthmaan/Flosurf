@@ -513,29 +513,29 @@
       "cssVar": "--color-fg-on-action"
     },
     "color.fg.link": {
-      "value": "#02a049",
-      "original": "{core.brand.gratitude.default}",
+      "value": "#a6eb2e",
+      "original": "{palette.lumen.l300}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-fg-link"
     },
     "color.fg.danger": {
-      "value": "#f15844",
-      "original": "{core.utility.destructive.default}",
+      "value": "#fef0eb",
+      "original": "{palette.remedy.r100}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-fg-danger"
     },
     "color.fg.success": {
-      "value": "#02a049",
-      "original": "{core.brand.gratitude.default}",
+      "value": "#a6eb2e",
+      "original": "{palette.lumen.l300}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-fg-success"
     },
     "color.fg.warning": {
-      "value": "#ffa536",
-      "original": "{core.utility.caution.default}",
+      "value": "#fff6ea",
+      "original": "{palette.oasis.o100}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-fg-warning"
@@ -555,22 +555,22 @@
       "cssVar": "--color-border-default"
     },
     "color.border.strong": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{border.surface.strong}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-border-strong"
     },
     "color.border.focus": {
-      "value": "#02a049",
-      "original": "{border.utility.constructive.strong}",
+      "value": "#a6eb2e",
+      "original": "{palette.lumen.l300}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-border-focus"
     },
     "color.border.danger": {
-      "value": "#f15844",
-      "original": "{border.utility.destructive.strong}",
+      "value": "#fef0eb",
+      "original": "{palette.remedy.r100}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--color-border-danger"
@@ -1825,8 +1825,8 @@
       "cssVar": "--border-width-emphasis"
     },
     "border.surface.strong": {
-      "value": "#273f38",
-      "original": "{palette.nimbus.n500}",
+      "value": "#e2e9e1",
+      "original": "{palette.nimbus.n100}",
       "type": "color",
       "tier": "semantic",
       "cssVar": "--border-surface-strong"
@@ -3092,28 +3092,28 @@
       "cssVar": "--button-secondary-fg-loading"
     },
     "button.secondary.border.default": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
       "cssVar": "--button-secondary-border-default"
     },
     "button.secondary.border.hover": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
       "cssVar": "--button-secondary-border-hover"
     },
     "button.secondary.border.focus-visible": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
       "cssVar": "--button-secondary-border-focus-visible"
     },
     "button.secondary.border.active": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
@@ -3127,7 +3127,7 @@
       "cssVar": "--button-secondary-border-disabled"
     },
     "button.secondary.border.loading": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
@@ -3379,7 +3379,7 @@
       "cssVar": "--button-border-width"
     },
     "button.focus-ring.color": {
-      "value": "#02a049",
+      "value": "#a6eb2e",
       "original": "{color.border.focus}",
       "type": "color",
       "tier": "component",
@@ -3596,21 +3596,21 @@
       "cssVar": "--input-default-border-default"
     },
     "input.default.border.hover": {
-      "value": "#273f38",
+      "value": "#e2e9e1",
       "original": "{color.border.strong}",
       "type": "color",
       "tier": "component",
       "cssVar": "--input-default-border-hover"
     },
     "input.default.border.focus-visible": {
-      "value": "#02a049",
+      "value": "#a6eb2e",
       "original": "{color.border.focus}",
       "type": "color",
       "tier": "component",
       "cssVar": "--input-default-border-focus-visible"
     },
     "input.default.border.active": {
-      "value": "#02a049",
+      "value": "#a6eb2e",
       "original": "{color.border.focus}",
       "type": "color",
       "tier": "component",
@@ -3715,28 +3715,28 @@
       "cssVar": "--input-error-fg-loading"
     },
     "input.error.border.default": {
-      "value": "#f15844",
+      "value": "#fef0eb",
       "original": "{color.border.danger}",
       "type": "color",
       "tier": "component",
       "cssVar": "--input-error-border-default"
     },
     "input.error.border.hover": {
-      "value": "#f15844",
+      "value": "#fef0eb",
       "original": "{color.border.danger}",
       "type": "color",
       "tier": "component",
       "cssVar": "--input-error-border-hover"
     },
     "input.error.border.focus-visible": {
-      "value": "#f15844",
+      "value": "#fef0eb",
       "original": "{color.border.danger}",
       "type": "color",
       "tier": "component",
       "cssVar": "--input-error-border-focus-visible"
     },
     "input.error.border.active": {
-      "value": "#f15844",
+      "value": "#fef0eb",
       "original": "{color.border.danger}",
       "type": "color",
       "tier": "component",
@@ -3750,7 +3750,7 @@
       "cssVar": "--input-error-border-disabled"
     },
     "input.error.border.loading": {
-      "value": "#f15844",
+      "value": "#fef0eb",
       "original": "{color.border.danger}",
       "type": "color",
       "tier": "component",
@@ -3858,7 +3858,7 @@
       "cssVar": "--input-border-width"
     },
     "input.focus-ring.color": {
-      "value": "#02a049",
+      "value": "#a6eb2e",
       "original": "{color.border.focus}",
       "type": "color",
       "tier": "component",

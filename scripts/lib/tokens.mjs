@@ -3,10 +3,15 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-export const MODES = ['light', 'dark', 'high-contrast'];
+export const MODES = fs.existsSync(path.join(ROOT, 'tokens/semantic/modes'))
+  ? fs
+      .readdirSync(path.join(ROOT, 'tokens/semantic/modes'))
+      .filter((f) => f.endsWith('.json'))
+      .map((f) => f.replace('.json', ''))
+  : ['day', 'night', 'day-hc', 'night-hc'];
 
 /** Load resolved tokens for a mode from dist/json (run `npm run build` first). */
-export function loadTokens(mode = 'light') {
+export function loadTokens(mode = MODES[0] || 'day') {
   const file = path.join(ROOT, 'dist/json', `${mode}.json`);
   if (!fs.existsSync(file)) {
     console.error(`✖ ${path.relative(ROOT, file)} not found. Run \`npm run build\` first.`);

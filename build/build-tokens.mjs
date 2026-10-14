@@ -31,8 +31,14 @@ const MODES = modeFiles.map((f) => {
     media: isDark ? '(prefers-color-scheme: dark)' : isHC ? '(prefers-contrast: more)' : undefined,
   };
 });
-// Ensure the base mode runs first so tokens.css contains the global declarations
-MODES.sort((a, b) => (b.base ? 1 : 0) - (a.base ? 1 : 0));
+// Ensure the base mode runs first so tokens.css contains the global declarations, followed by canonical order
+const modeOrder = ['day', 'night', 'day-hc', 'night-hc'];
+MODES.sort((a, b) => {
+  if (b.base !== a.base) return (b.base ? 1 : 0) - (a.base ? 1 : 0);
+  const ia = modeOrder.indexOf(a.name);
+  const ib = modeOrder.indexOf(b.name);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+});
 
 // Explicit transform list (instead of the `css` group) so px stays px and ms stays ms.
 const CSS_TRANSFORMS = ['attribute/cti', 'name/kebab', 'color/css', 'fontFamily/css', 'cubicBezier/css'];
@@ -96,6 +102,8 @@ StyleDictionary.registerFormat({
 // Style Dictionary runs
 // ---------------------------------------------------------------------------
 
+await fs.rm('dist', { recursive: true, force: true });
+
 for (const mode of MODES) {
   const cssFile = {
     destination: mode.base ? 'tokens.css' : `theme-${mode.name}.css`,
@@ -138,7 +146,8 @@ const resolved = {};
 for (const mode of MODES) {
   resolved[mode.name] = JSON.parse(await fs.readFile(`dist/json/${mode.name}.json`, 'utf8')).tokens;
 }
-const light = resolved.light;
+const baseModeName = MODES.find((m) => m.base)?.name || 'day';
+const baseTokens = resolved[baseModeName];
 const write = async (file, content) => {
   await fs.mkdir(path.dirname(file), { recursive: true });
   await fs.writeFile(file, content);
@@ -169,7 +178,7 @@ function tailwindName(tokenPath, token) {
   if (p[0] === 'font' && p.includes('size')) return { ns: 'text', key: p.filter((s) => s !== 'font' && s !== 'size').join('-') };
   return null;
 }
-const twEntries = Object.entries(light)
+const twEntries = Object.entries(baseTokens)
   .map(([p, t]) => ({ map: tailwindName(p, t), cssVar: t.cssVar }))
   .filter((e) => e.map);
 await write(
@@ -196,7 +205,7 @@ const parseHex = (hex) => {
 const camel = (p) => p.replace(/[.-](\w)/g, (_, c) => c.toUpperCase());
 const snake = (p) => p.replace(/[.-]/g, '_');
 const kebab = (p) => p.replace(/\./g, '-');
-const consumable = Object.entries(light).filter(([, t]) => t.tier !== 'primitive');
+const consumable = Object.entries(baseTokens).filter(([, t]) => t.tier !== 'primitive');
 const colorTokens = consumable.filter(([, t]) => t.type === 'color');
 const dimensionTokens = consumable.filter(([, t]) => t.type === 'dimension' && /px$/.test(t.value));
 
@@ -223,9 +232,9 @@ for (const [p, t] of consumable) {
 await write('dist/react-native/tokens.js', `// ${BANNER}\nmodule.exports = ${JSON.stringify(rnTokens, null, 2)};\n`);
 
 // 4. Native outputs (iOS & Android)
-const lightModeName = resolved.light ? 'light' : resolved.day ? 'day' : Object.keys(resolved)[0];
-const darkModeName = resolved.dark ? 'dark' : resolved.night ? 'night' : lightModeName;
-const hcModeName = resolved['high-contrast'] ? 'high-contrast' : lightModeName;
+const lightModeName = resolved.day ? 'day' : resolved.light ? 'light' : Object.keys(resolved)[0];
+const darkModeName = resolved.night ? 'night' : resolved.dark ? 'dark' : lightModeName;
+const hcModeName = resolved['day-hc'] ? 'day-hc' : resolved['high-contrast'] ? 'high-contrast' : lightModeName;
 
 // 4a. iOS: Asset Catalog colorsets with light / dark / high-contrast appearances + Swift accessors.
 const component = (v) => (v / 255).toFixed(3);
@@ -286,7 +295,7 @@ for (const file of await fs.readdir('tokens/component')) {
   }
 }
 const merged = {};
-for (const [p, t] of Object.entries(light)) {
+for (const [p, t] of Object.entries(baseTokens)) {
   merged[p] = {
     tier: t.tier,
     type: t.type,
@@ -320,5 +329,5 @@ try {
 }
 
 console.log(
-  `\n✔ Built ${Object.keys(light).length} tokens × ${MODES.length} modes → dist/{css,json,tailwind,ios,android} + visualizer data`,
+  `\n✔ Built ${Object.keys(baseTokens).length} tokens × ${MODES.length} modes → dist/{css,json,tailwind,ios,android} + visualizer data`,
 );

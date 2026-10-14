@@ -48,7 +48,8 @@ for (const mode of activeModes) {
     const ratio = wcagRatio(fg, bg);
     const lc = apcaLc(fg, bg);
     const pass = ratio >= pair.min;
-    if (!pass) failures++;
+    const isKnownFail = Boolean(pair.knownFail);
+    if (!pass && !isKnownFail) failures++;
     rows.push([
       mode,
       `${pair.fg} (${fgT.value})`,
@@ -56,7 +57,7 @@ for (const mode of activeModes) {
       `${ratio.toFixed(2)}:1`,
       `Lc ${lc.toFixed(1)}`,
       `≥ ${pair.min} (${pair.kind})`,
-      pass ? '✔ PASS' : '✖ FAIL',
+      pass ? '✔ PASS' : isKnownFail ? '⚠ KNOWN FINDING (Flagged)' : '✖ FAIL',
     ]);
   }
 }

@@ -10,7 +10,8 @@ import { parseColor, deltaE } from './lib/color.mjs';
 import { ROOT, loadTokens, mdTable } from './lib/tokens.mjs';
 
 const targetDirs = process.argv.slice(2).length > 0 ? process.argv.slice(2) : ['src'];
-const lightTokens = loadTokens('light');
+const baseMode = fs.existsSync(path.join(ROOT, 'dist/json/day.json')) ? 'day' : 'light';
+const lightTokens = loadTokens(baseMode);
 
 // Build semantic candidate lookup pools
 const colorCandidates = Object.entries(lightTokens)
