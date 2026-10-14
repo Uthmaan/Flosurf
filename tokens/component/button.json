@@ -1,0 +1,142 @@
+{
+  "button": {
+    "$description": "Tier 3 Button tokens. Every variant must define the full state matrix (Gate 3).",
+    "$extensions": {
+      "com.flosurf": {
+        "interactive": true,
+        "pattern": "button",
+        "wai-aria": "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
+        "source": "src/components/Button",
+        "requiredAria": ["aria-busy", "aria-disabled"]
+      }
+    },
+    "primary": {
+      "bg": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.action.primary.default}" },
+        "hover": { "$value": "{color.bg.action.primary.hover}" },
+        "focus-visible": { "$value": "{color.bg.action.primary.default}" },
+        "active": { "$value": "{color.bg.action.primary.active}" },
+        "disabled": { "$value": "{color.bg.action.primary.disabled}" },
+        "loading": { "$value": "{color.bg.action.primary.default}" }
+      },
+      "fg": {
+        "$type": "color",
+        "default": { "$value": "{color.fg.on-action}" },
+        "hover": { "$value": "{color.fg.on-action}" },
+        "focus-visible": { "$value": "{color.fg.on-action}" },
+        "active": { "$value": "{color.fg.on-action}" },
+        "disabled": { "$value": "{color.fg.disabled}" },
+        "loading": { "$value": "{color.fg.on-action}" }
+      },
+      "border": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.action.primary.default}" },
+        "hover": { "$value": "{color.bg.action.primary.hover}" },
+        "focus-visible": { "$value": "{color.bg.action.primary.default}" },
+        "active": { "$value": "{color.bg.action.primary.active}" },
+        "disabled": { "$value": "{color.bg.action.primary.disabled}" },
+        "loading": { "$value": "{color.bg.action.primary.default}" }
+      }
+    },
+    "secondary": {
+      "bg": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.action.secondary.default}" },
+        "hover": { "$value": "{color.bg.action.secondary.hover}" },
+        "focus-visible": { "$value": "{color.bg.action.secondary.default}" },
+        "active": { "$value": "{color.bg.action.secondary.active}" },
+        "disabled": { "$value": "{color.bg.action.secondary.disabled}" },
+        "loading": { "$value": "{color.bg.action.secondary.default}" }
+      },
+      "fg": {
+        "$type": "color",
+        "default": { "$value": "{color.fg.default}" },
+        "hover": { "$value": "{color.fg.default}" },
+        "focus-visible": { "$value": "{color.fg.default}" },
+        "active": { "$value": "{color.fg.default}" },
+        "disabled": { "$value": "{color.fg.disabled}" },
+        "loading": { "$value": "{color.fg.default}" }
+      },
+      "border": {
+        "$type": "color",
+        "default": { "$value": "{color.border.strong}" },
+        "hover": { "$value": "{color.border.strong}" },
+        "focus-visible": { "$value": "{color.border.strong}" },
+        "active": { "$value": "{color.border.strong}" },
+        "disabled": { "$value": "{color.border.subtle}" },
+        "loading": { "$value": "{color.border.strong}" }
+      }
+    },
+    "danger": {
+      "bg": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.action.danger.default}" },
+        "hover": { "$value": "{color.bg.action.danger.hover}" },
+        "focus-visible": { "$value": "{color.bg.action.danger.default}" },
+        "active": { "$value": "{color.bg.action.danger.active}" },
+        "disabled": { "$value": "{color.bg.action.danger.disabled}" },
+        "loading": { "$value": "{color.bg.action.danger.default}" }
+      },
+      "fg": {
+        "$type": "color",
+        "default": { "$value": "{color.fg.on-action}" },
+        "hover": { "$value": "{color.fg.on-action}" },
+        "focus-visible": { "$value": "{color.fg.on-action}" },
+        "active": { "$value": "{color.fg.on-action}" },
+        "disabled": { "$value": "{color.fg.disabled}" },
+        "loading": { "$value": "{color.fg.on-action}" }
+      },
+      "border": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.action.danger.default}" },
+        "hover": { "$value": "{color.bg.action.danger.hover}" },
+        "focus-visible": { "$value": "{color.bg.action.danger.default}" },
+        "active": { "$value": "{color.bg.action.danger.active}" },
+        "disabled": { "$value": "{color.bg.action.danger.disabled}" },
+        "loading": { "$value": "{color.bg.action.danger.default}" }
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "x": {
+        "sm": { "$value": "{layout.padding.control.x.sm}" },
+        "md": { "$value": "{layout.padding.control.x.md}" },
+        "lg": { "$value": "{layout.padding.control.x.lg}" }
+      },
+      "y": {
+        "sm": { "$value": "{layout.padding.control.y.sm}" },
+        "md": { "$value": "{layout.padding.control.y.md}" },
+        "lg": { "$value": "{layout.padding.control.y.lg}" }
+      }
+    },
+    "min-height": {
+      "$type": "dimension",
+      "sm": { "$value": "{layout.control-height.sm}" },
+      "md": { "$value": "{layout.control-height.md}" },
+      "lg": { "$value": "{layout.control-height.lg}" }
+    },
+    "font": {
+      "size": {
+        "$type": "dimension",
+        "sm": { "$value": "{font.label.size.sm}" },
+        "md": { "$value": "{font.label.size.md}" },
+        "lg": { "$value": "{font.label.size.lg}" }
+      },
+      "weight": { "$type": "fontWeight", "$value": "{font.label.weight}" },
+      "family": { "$type": "fontFamily", "$value": "{font.body.family}" }
+    },
+    "gap": { "$type": "dimension", "$value": "{layout.gap.sm}" },
+    "radius": { "$type": "dimension", "$value": "{radius.control}" },
+    "border-width": { "$type": "dimension", "$value": "{border.width.default}" },
+    "focus-ring": {
+      "color": { "$type": "color", "$value": "{color.border.focus}" },
+      "width": { "$type": "dimension", "$value": "{focus.ring.width}" },
+      "offset": { "$type": "dimension", "$value": "{focus.ring.offset}" }
+    },
+    "transition": {
+      "duration": { "$type": "duration", "$value": "{motion.duration.fast}" },
+      "easing": { "$type": "cubicBezier", "$value": "{motion.easing.standard}" }
+    }
+  }
+}

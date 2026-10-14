@@ -1,0 +1,30 @@
+{
+  "card": {
+    "$description": "Tier 3 Card tokens. Static container (non-interactive), so no state matrix required.",
+    "$extensions": {
+      "com.flosurf": {
+        "interactive": false,
+        "source": "src/components/Card"
+      }
+    },
+    "container": {
+      "bg": { "$type": "color", "$value": "{color.bg.surface.raised}" },
+      "border": { "$type": "color", "$value": "{color.border.default}" },
+      "border-width": { "$type": "dimension", "$value": "{border.width.default}" },
+      "radius": { "$type": "dimension", "$value": "{radius.container}" },
+      "padding": { "$type": "dimension", "$value": "{layout.inset.lg}" },
+      "gap": { "$type": "dimension", "$value": "{layout.gap.md}" }
+    },
+    "title": {
+      "fg": { "$type": "color", "$value": "{color.fg.default}" },
+      "size": { "$type": "dimension", "$value": "{font.heading.size}" },
+      "weight": { "$type": "fontWeight", "$value": "{font.heading.weight}" },
+      "line-height": { "$type": "number", "$value": "{font.heading.line-height}" }
+    },
+    "body": {
+      "fg": { "$type": "color", "$value": "{color.fg.muted}" },
+      "size": { "$type": "dimension", "$value": "{font.body.size}" },
+      "line-height": { "$type": "number", "$value": "{font.body.line-height}" }
+    }
+  }
+}

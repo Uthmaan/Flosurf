@@ -1,0 +1,51 @@
+name: CI Token Build & AI Audit Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-audit:
+    name: Build Multi-Mode Tokens & Run Audit Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Design Tokens (Style Dictionary v4)
+        run: npm run build
+
+      - name: Gate 1 — Zero Hardcoded Hex/Px Linter
+        run: npm run audit:hardcoded src
+
+      - name: Gate 2 — WCAG 2.2 / APCA Contrast Matrix
+        run: npm run audit:contrast
+
+      - name: Gate 3 — WAI-ARIA & State Matrix Contract
+        run: npm run audit:states
+
+      - name: Verify Visualizer Integrity
+        run: |
+          test -s visualizer/index.html
+          echo "Visualizer verified and packaged."
+
+      - name: Upload Compiled Tokens & Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: flosurf-compiled-tokens
+          path: |
+            dist/
+            visualizer/index.html
+          retention-days: 30

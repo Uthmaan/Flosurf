@@ -1,0 +1,23 @@
+{
+  "name": "flosurf-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted 3-tier W3C DTCG design token system, Style Dictionary v4 pipeline, CI audit gates and agent skills.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19"
+  },
+  "scripts": {
+    "build": "node build/build-tokens.mjs",
+    "audit:hardcoded": "node scripts/audit-hardcoded.mjs src",
+    "audit:contrast": "node scripts/audit-contrast.mjs",
+    "audit:states": "node scripts/audit-states.mjs",
+    "audit": "npm run audit:hardcoded && npm run audit:contrast && npm run audit:states",
+    "audit:demo": "node scripts/audit-hardcoded.mjs examples/violations",
+    "ci": "npm run build && npm run audit",
+    "visualizer": "open visualizer/index.html"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.4.0"
+  }
+}

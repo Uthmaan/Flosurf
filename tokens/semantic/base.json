@@ -1,0 +1,109 @@
+{
+  "layout": {
+    "$description": "Tier 2 mode-agnostic layout intent.",
+    "padding": {
+      "$type": "dimension",
+      "control": {
+        "x": {
+          "sm": { "$value": "{space.300}" },
+          "md": { "$value": "{space.400}" },
+          "lg": { "$value": "{space.600}" }
+        },
+        "y": {
+          "sm": { "$value": "{space.100}" },
+          "md": { "$value": "{space.200}" },
+          "lg": { "$value": "{space.300}" }
+        }
+      }
+    },
+    "inset": {
+      "$type": "dimension",
+      "sm": { "$value": "{space.300}" },
+      "md": { "$value": "{space.400}" },
+      "lg": { "$value": "{space.600}" }
+    },
+    "gap": {
+      "$type": "dimension",
+      "xs": { "$value": "{space.100}" },
+      "sm": { "$value": "{space.200}" },
+      "md": { "$value": "{space.400}" },
+      "lg": { "$value": "{space.600}" },
+      "xl": { "$value": "{space.800}" }
+    },
+    "control-height": {
+      "$type": "dimension",
+      "$description": "Minimum hit target. md/lg satisfy WCAG 2.2 SC 2.5.8 (24px) and Apple/Material 44-48px guidance.",
+      "sm": { "$value": "{space.800}" },
+      "md": { "$value": "{space.1000}" },
+      "lg": { "$value": "{space.1200}" }
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "control": { "$value": "{radius.200}" },
+    "container": { "$value": "{radius.300}" },
+    "pill": { "$value": "{radius.full}" }
+  },
+  "border": {
+    "$type": "dimension",
+    "width": {
+      "default": { "$value": "{border-width.100}" },
+      "emphasis": { "$value": "{border-width.200}" }
+    }
+  },
+  "focus": {
+    "ring": {
+      "width": { "$type": "dimension", "$value": "{border-width.200}" },
+      "offset": { "$type": "dimension", "$value": "{space.50}" }
+    }
+  },
+  "font": {
+    "body": {
+      "family": { "$type": "fontFamily", "$value": "{font.family.sans}" },
+      "size": { "$type": "dimension", "$value": "{font.size.200}" },
+      "weight": { "$type": "fontWeight", "$value": "{font.weight.regular}" },
+      "line-height": { "$type": "number", "$value": "{font.line-height.normal}" }
+    },
+    "label": {
+      "size": {
+        "$type": "dimension",
+        "sm": { "$value": "{font.size.75}" },
+        "md": { "$value": "{font.size.100}" },
+        "lg": { "$value": "{font.size.200}" }
+      },
+      "weight": { "$type": "fontWeight", "$value": "{font.weight.semibold}" }
+    },
+    "heading": {
+      "size": { "$type": "dimension", "$value": "{font.size.400}" },
+      "weight": { "$type": "fontWeight", "$value": "{font.weight.bold}" },
+      "line-height": { "$type": "number", "$value": "{font.line-height.tight}" }
+    },
+    "caption": {
+      "size": { "$type": "dimension", "$value": "{font.size.75}" }
+    },
+    "code": {
+      "family": { "$type": "fontFamily", "$value": "{font.family.mono}" }
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": { "$value": "{duration.100}" },
+      "normal": { "$value": "{duration.200}" }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": { "$value": "{easing.standard}" }
+    }
+  },
+  "elevation": {
+    "z": {
+      "$type": "number",
+      "base": { "$value": "{z.0}" },
+      "dropdown": { "$value": "{z.100}" },
+      "overlay": { "$value": "{z.200}" },
+      "modal": { "$value": "{z.300}" },
+      "toast": { "$value": "{z.400}" }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "space": {
+    "$type": "dimension",
+    "$description": "Tier 1 spacing scale on a 4px base grid. Name = value x 0.04 (400 = 16px).",
+    "0": { "$value": "0px" },
+    "25": { "$value": "1px" },
+    "50": { "$value": "2px" },
+    "100": { "$value": "4px" },
+    "150": { "$value": "6px" },
+    "200": { "$value": "8px" },
+    "300": { "$value": "12px" },
+    "400": { "$value": "16px" },
+    "500": { "$value": "20px" },
+    "600": { "$value": "24px" },
+    "800": { "$value": "32px" },
+    "1000": { "$value": "40px" },
+    "1200": { "$value": "48px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "0": { "$value": "0px" },
+    "100": { "$value": "4px" },
+    "200": { "$value": "8px" },
+    "300": { "$value": "12px" },
+    "full": { "$value": "9999px" }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "100": { "$value": "1px" },
+    "200": { "$value": "2px" },
+    "300": { "$value": "3px" }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] },
+      "mono": { "$value": ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"] }
+    },
+    "size": {
+      "$type": "dimension",
+      "75": { "$value": "12px" },
+      "100": { "$value": "14px" },
+      "200": { "$value": "16px" },
+      "300": { "$value": "18px" },
+      "400": { "$value": "20px" },
+      "500": { "$value": "24px" },
+      "600": { "$value": "30px" }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold": { "$value": 700 }
+    },
+    "line-height": {
+      "$type": "number",
+      "tight": { "$value": 1.25 },
+      "normal": { "$value": 1.5 }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "100": { "$value": "100ms" },
+    "200": { "$value": "200ms" },
+    "300": { "$value": "300ms" }
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "standard": { "$value": [0.2, 0, 0, 1] },
+    "emphasized": { "$value": [0.3, 0, 0, 1.2] }
+  },
+  "z": {
+    "$type": "number",
+    "0": { "$value": 0 },
+    "100": { "$value": 100 },
+    "200": { "$value": 200 },
+    "300": { "$value": 300 },
+    "400": { "$value": 400 }
+  }
+}
