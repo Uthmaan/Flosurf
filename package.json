@@ -15,7 +15,8 @@
     "audit": "npm run audit:hardcoded && npm run audit:contrast && npm run audit:states",
     "audit:demo": "node scripts/audit-hardcoded.mjs examples/violations",
     "ci": "npm run build && npm run audit",
-    "visualizer": "open visualizer/index.html"
+    "visualizer": "open visualizer/index.html",
+    "serve": "node scripts/serve.mjs"
   },
   "devDependencies": {
     "style-dictionary": "^4.4.0"
