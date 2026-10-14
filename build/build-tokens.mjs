@@ -14,11 +14,25 @@ import { fileHeader, formattedVariables } from 'style-dictionary/utils';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(ROOT);
 
-const MODES = [
-  { name: 'light', base: true, selector: ':root, [data-theme="light"]', colorScheme: 'light' },
-  { name: 'dark', selector: '[data-theme="dark"]', colorScheme: 'dark', media: '(prefers-color-scheme: dark)' },
-  { name: 'high-contrast', selector: '[data-theme="high-contrast"]', colorScheme: 'light', media: '(prefers-contrast: more)' },
-];
+// Auto-discover all available modes in tokens/semantic/modes/*.json
+const modeFiles = (await fs.readdir('tokens/semantic/modes')).filter((f) => f.endsWith('.json'));
+const hasLight = modeFiles.includes('light.json');
+
+const MODES = modeFiles.map((f) => {
+  const name = f.replace('.json', '');
+  const isBase = name === 'light' || (!hasLight && name === 'day');
+  const isDark = name.includes('dark') || name.includes('night');
+  const isHC = name.includes('high-contrast') || name.includes('-hc');
+  return {
+    name,
+    base: isBase,
+    selector: isBase ? `:root, [data-theme="${name}"]` : `[data-theme="${name}"]`,
+    colorScheme: isDark ? 'dark' : 'light',
+    media: isDark ? '(prefers-color-scheme: dark)' : isHC ? '(prefers-contrast: more)' : undefined,
+  };
+});
+// Ensure the base mode runs first so tokens.css contains the global declarations
+MODES.sort((a, b) => (b.base ? 1 : 0) - (a.base ? 1 : 0));
 
 // Explicit transform list (instead of the `css` group) so px stays px and ms stays ms.
 const CSS_TRANSFORMS = ['attribute/cti', 'name/kebab', 'color/css', 'fontFamily/css', 'cubicBezier/css'];
@@ -186,7 +200,34 @@ const consumable = Object.entries(light).filter(([, t]) => t.tier !== 'primitive
 const colorTokens = consumable.filter(([, t]) => t.type === 'color');
 const dimensionTokens = consumable.filter(([, t]) => t.type === 'dimension' && /px$/.test(t.value));
 
-// 3a. iOS: Asset Catalog colorsets with light / dark / high-contrast appearances + Swift accessors.
+// 3. React Native Output (unitless numbers, Tailwind 3.4.17 compatible)
+const rnTokens = {
+  colors: {},
+  spacing: {},
+  radius: {},
+  fontSize: {},
+};
+for (const [p, t] of consumable) {
+  const parts = p.split('.');
+  if (t.type === 'color') {
+    rnTokens.colors[camel(p)] = t.value;
+  } else if (t.type === 'dimension' && typeof t.value === 'string') {
+    const num = parseFloat(t.value);
+    if (!isNaN(num)) {
+      if (p.includes('radius')) rnTokens.radius[camel(p)] = num;
+      else if (p.includes('font') || p.includes('size')) rnTokens.fontSize[camel(p)] = num;
+      else rnTokens.spacing[camel(p)] = num;
+    }
+  }
+}
+await write('dist/react-native/tokens.js', `// ${BANNER}\nmodule.exports = ${JSON.stringify(rnTokens, null, 2)};\n`);
+
+// 4. Native outputs (iOS & Android)
+const lightModeName = resolved.light ? 'light' : resolved.day ? 'day' : Object.keys(resolved)[0];
+const darkModeName = resolved.dark ? 'dark' : resolved.night ? 'night' : lightModeName;
+const hcModeName = resolved['high-contrast'] ? 'high-contrast' : lightModeName;
+
+// 4a. iOS: Asset Catalog colorsets with light / dark / high-contrast appearances + Swift accessors.
 const component = (v) => (v / 255).toFixed(3);
 const iosColor = (hex) => {
   const { r, g, b, a } = parseHex(hex);
@@ -196,9 +237,9 @@ await fs.rm('dist/ios', { recursive: true, force: true });
 await write('dist/ios/FlosurfTokens.xcassets/Contents.json', JSON.stringify({ info: { author: 'flosurf', version: 1 } }, null, 2));
 for (const [p] of colorTokens) {
   const colors = [
-    { idiom: 'universal', color: iosColor(resolved.light[p].value) },
-    { idiom: 'universal', appearances: [{ appearance: 'luminosity', value: 'dark' }], color: iosColor(resolved.dark[p].value) },
-    { idiom: 'universal', appearances: [{ appearance: 'contrast', value: 'high' }], color: iosColor(resolved['high-contrast'][p].value) },
+    { idiom: 'universal', color: iosColor(resolved[lightModeName][p]?.value || '#000000') },
+    { idiom: 'universal', appearances: [{ appearance: 'luminosity', value: 'dark' }], color: iosColor(resolved[darkModeName][p]?.value || '#FFFFFF') },
+    { idiom: 'universal', appearances: [{ appearance: 'contrast', value: 'high' }], color: iosColor(resolved[hcModeName][p]?.value || '#000000') },
   ];
   await write(`dist/ios/FlosurfTokens.xcassets/${kebab(p)}.colorset/Contents.json`, JSON.stringify({ colors, info: { author: 'flosurf', version: 1 } }, null, 2));
 }
@@ -211,20 +252,19 @@ await write(
     '\n}\n',
 );
 
-// 3b. Android: values/ (light), values-night/ (dark), plus a high-contrast overlay applied via
-//     UiModeManager#getContrast() at runtime (Android has no resource qualifier for contrast).
+// 4b. Android
 const argb = (hex) => {
   const { r, g, b, a } = parseHex(hex);
   return '#' + [Math.round(a * 255), r, g, b].map((n) => n.toString(16).padStart(2, '0')).join('').toUpperCase();
 };
 const androidColors = (mode) =>
   `<?xml version="1.0" encoding="utf-8"?>\n<!-- ${BANNER} -->\n<resources>\n` +
-  colorTokens.map(([p]) => `    <color name="${snake(p)}">${argb(resolved[mode][p].value)}</color>`).join('\n') +
+  colorTokens.map(([p]) => `    <color name="${snake(p)}">${argb(resolved[mode]?.[p]?.value || '#000000')}</color>`).join('\n') +
   '\n</resources>\n';
 await fs.rm('dist/android', { recursive: true, force: true });
-await write('dist/android/values/flosurf_colors.xml', androidColors('light'));
-await write('dist/android/values-night/flosurf_colors.xml', androidColors('dark'));
-await write('dist/android/high-contrast/values/flosurf_colors.xml', androidColors('high-contrast'));
+await write('dist/android/values/flosurf_colors.xml', androidColors(lightModeName));
+await write('dist/android/values-night/flosurf_colors.xml', androidColors(darkModeName));
+await write('dist/android/high-contrast/values/flosurf_colors.xml', androidColors(hcModeName));
 await write(
   'dist/android/values/flosurf_dimens.xml',
   `<?xml version="1.0" encoding="utf-8"?>\n<!-- ${BANNER} -->\n<resources>\n` +

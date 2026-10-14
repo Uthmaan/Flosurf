@@ -132,7 +132,7 @@ function collectFiles(dir) {
       if (file !== 'node_modules' && file !== '.git' && file !== 'dist') {
         results.push(...collectFiles(full));
       }
-    } else if (/\.(tsx|ts|jsx|js|css|scss|vue|svelte)$/.test(file)) {
+    } else if (/\.(tsx|ts|jsx|js|css|scss|vue|svelte|html)$/.test(file)) {
       results.push(full);
     }
   }

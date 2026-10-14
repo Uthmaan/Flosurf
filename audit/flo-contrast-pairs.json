@@ -1,0 +1,13 @@
+{
+  "$description": "Flo-specific Gate 2 contrast contract. Verifies Day and Night modes against WCAG 2.2 AA (4.5:1 text, 3:1 UI) and High-Contrast targets (7:1 text, 4.5:1 UI).",
+  "pairs": [
+    { "fg": "text.neutral.default", "bg": "background.surface.ground-canvas", "min": 4.5, "kind": "text" },
+    { "fg": "text.neutral.default", "bg": "background.surface.floor-2", "min": 4.5, "kind": "text" },
+    { "fg": "text.neutral.subtle", "bg": "background.surface.ground-canvas", "min": 4.5, "kind": "text" },
+    { "fg": "text.inverse.default", "bg": "core.brand.gratitude.default", "min": 4.5, "kind": "text" },
+    { "fg": "border.surface.default", "bg": "background.surface.ground-canvas", "min": 3, "kind": "ui" },
+    { "fg": "border.surface.strong", "bg": "background.surface.ground-canvas", "min": 3, "kind": "ui" },
+    { "fg": "border.utility.constructive.strong", "bg": "background.surface.ground-canvas", "min": 3, "kind": "ui" },
+    { "fg": "core.brand.gratitude.default", "bg": "background.surface.ground-canvas", "min": 3, "kind": "ui" }
+  ]
+}

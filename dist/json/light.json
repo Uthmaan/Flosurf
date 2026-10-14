@@ -575,6 +575,664 @@
       "tier": "semantic",
       "cssVar": "--color-border-danger"
     },
+    "palette.nimbus.n0": {
+      "value": "#ffffff",
+      "original": "#FFFFFF",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n0"
+    },
+    "palette.nimbus.n25": {
+      "value": "#f5f6f2",
+      "original": "#F5F6F2",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n25"
+    },
+    "palette.nimbus.n50": {
+      "value": "#edefe9",
+      "original": "#EDEFE9",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n50"
+    },
+    "palette.nimbus.n100": {
+      "value": "#e2e9e1",
+      "original": "#E2E9E1",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n100"
+    },
+    "palette.nimbus.n200": {
+      "value": "#acbcb0",
+      "original": "#ACBCB0",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n200"
+    },
+    "palette.nimbus.n300": {
+      "value": "#7b8f87",
+      "original": "#7B8F87",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n300"
+    },
+    "palette.nimbus.n400": {
+      "value": "#4d6860",
+      "original": "#4D6860",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n400"
+    },
+    "palette.nimbus.n500": {
+      "value": "#273f38",
+      "original": "#273F38",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n500"
+    },
+    "palette.nimbus.n600": {
+      "value": "#142923",
+      "original": "#142923",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n600"
+    },
+    "palette.nimbus.n700": {
+      "value": "#041b14",
+      "original": "#041B14",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n700"
+    },
+    "palette.nimbus.n800": {
+      "value": "#00100c",
+      "original": "#00100C",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-nimbus-n800"
+    },
+    "palette.gratitude.g100": {
+      "value": "#e3f7eb",
+      "original": "#E3F7EB",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-gratitude-g100"
+    },
+    "palette.gratitude.g200": {
+      "value": "#92ddb0",
+      "original": "#92DDB0",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-gratitude-g200"
+    },
+    "palette.gratitude.g300": {
+      "value": "#02a049",
+      "original": "#02A049",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-gratitude-g300"
+    },
+    "palette.gratitude.g400": {
+      "value": "#00833d",
+      "original": "#00833D",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-gratitude-g400"
+    },
+    "palette.gratitude.g500": {
+      "value": "#005f28",
+      "original": "#005F28",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-gratitude-g500"
+    },
+    "palette.yolk.y100": {
+      "value": "#fffcea",
+      "original": "#FFFCEA",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-y100"
+    },
+    "palette.yolk.y200": {
+      "value": "#ffee99",
+      "original": "#FFEE99",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-y200"
+    },
+    "palette.yolk.y300": {
+      "value": "#ffe036",
+      "original": "#FFE036",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-y300"
+    },
+    "palette.yolk.y400": {
+      "value": "#b58a00",
+      "original": "#B58A00",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-y400"
+    },
+    "palette.yolk.y500": {
+      "value": "#705500",
+      "original": "#705500",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-y500"
+    },
+    "palette.yolk-2.y100": {
+      "value": "#fffdec",
+      "original": "#FFFDEC",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-2-y100"
+    },
+    "palette.yolk-2.y200": {
+      "value": "#fff6a7",
+      "original": "#FFF6A7",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-2-y200"
+    },
+    "palette.yolk-2.y300": {
+      "value": "#ffea29",
+      "original": "#FFEA29",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-2-y300"
+    },
+    "palette.yolk-2.y400": {
+      "value": "#b3a200",
+      "original": "#B3A200",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-2-y400"
+    },
+    "palette.yolk-2.y500": {
+      "value": "#766a00",
+      "original": "#766A00",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-yolk-2-y500"
+    },
+    "palette.remedy.r100": {
+      "value": "#fef0eb",
+      "original": "#FEF0EB",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-remedy-r100"
+    },
+    "palette.remedy.r200": {
+      "value": "#f8b3a0",
+      "original": "#F8B3A0",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-remedy-r200"
+    },
+    "palette.remedy.r300": {
+      "value": "#f15844",
+      "original": "#F15844",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-remedy-r300"
+    },
+    "palette.remedy.r400": {
+      "value": "#bb422b",
+      "original": "#BB422B",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-remedy-r400"
+    },
+    "palette.remedy.r500": {
+      "value": "#6c2010",
+      "original": "#6C2010",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-remedy-r500"
+    },
+    "palette.oasis.o100": {
+      "value": "#fff6ea",
+      "original": "#FFF6EA",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-oasis-o100"
+    },
+    "palette.oasis.o200": {
+      "value": "#ffd39e",
+      "original": "#FFD39E",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-oasis-o200"
+    },
+    "palette.oasis.o300": {
+      "value": "#ffa536",
+      "original": "#FFA536",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-oasis-o300"
+    },
+    "palette.oasis.o400": {
+      "value": "#b85e00",
+      "original": "#B85E00",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-oasis-o400"
+    },
+    "palette.oasis.o500": {
+      "value": "#773e00",
+      "original": "#773E00",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-oasis-o500"
+    },
+    "palette.beacon.b100": {
+      "value": "#ebf4fe",
+      "original": "#EBF4FE",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-beacon-b100"
+    },
+    "palette.beacon.b200": {
+      "value": "#a0c8f8",
+      "original": "#A0C8F8",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-beacon-b200"
+    },
+    "palette.beacon.b300": {
+      "value": "#4492f1",
+      "original": "#4492F1",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-beacon-b300"
+    },
+    "palette.beacon.b400": {
+      "value": "#0d59a6",
+      "original": "#0D59A6",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-beacon-b400"
+    },
+    "palette.beacon.b500": {
+      "value": "#083570",
+      "original": "#083570",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-beacon-b500"
+    },
+    "palette.lumen.l100": {
+      "value": "#f5feeb",
+      "original": "#F5FEEB",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-lumen-l100"
+    },
+    "palette.lumen.l200": {
+      "value": "#d0f7a4",
+      "original": "#D0F7A4",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-lumen-l200"
+    },
+    "palette.lumen.l300": {
+      "value": "#a6eb2e",
+      "original": "#A6EB2E",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-lumen-l300"
+    },
+    "palette.lumen.l400": {
+      "value": "#538300",
+      "original": "#538300",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-lumen-l400"
+    },
+    "palette.lumen.l500": {
+      "value": "#3e6300",
+      "original": "#3E6300",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-lumen-l500"
+    },
+    "palette.mend.m100": {
+      "value": "#e9f7f1",
+      "original": "#E9F7F1",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-mend-m100"
+    },
+    "palette.mend.m200": {
+      "value": "#9adac2",
+      "original": "#9ADAC2",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-mend-m200"
+    },
+    "palette.mend.m300": {
+      "value": "#02b58c",
+      "original": "#02B58C",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-mend-m300"
+    },
+    "palette.mend.m400": {
+      "value": "#007e5e",
+      "original": "#007E5E",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-mend-m400"
+    },
+    "palette.mend.m500": {
+      "value": "#00523c",
+      "original": "#00523C",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-mend-m500"
+    },
+    "palette.growth-gradient.growth-1": {
+      "value": "#02a049",
+      "original": "{palette.gratitude.g300}",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-growth-gradient-growth-1"
+    },
+    "palette.growth-gradient.growth-2": {
+      "value": "#005f28",
+      "original": "{palette.gratitude.g500}",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-growth-gradient-growth-2"
+    },
+    "palette.rush-gradient.rush-1": {
+      "value": "#ffe036",
+      "original": "{palette.yolk.y300}",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-rush-gradient-rush-1"
+    },
+    "palette.rush-gradient.rush-2": {
+      "value": "#ffa536",
+      "original": "#FFA536",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-rush-gradient-rush-2"
+    },
+    "palette.pulse-gradient.pulse-1": {
+      "value": "#02a049",
+      "original": "{palette.gratitude.g300}",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-pulse-gradient-pulse-1"
+    },
+    "palette.pulse-gradient.pulse-2": {
+      "value": "#a6eb2e",
+      "original": "{palette.lumen.l300}",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-pulse-gradient-pulse-2"
+    },
+    "palette.figma.purpleline": {
+      "value": "#9747ff",
+      "original": "#9747FF",
+      "type": "color",
+      "tier": "primitive",
+      "cssVar": "--palette-figma-purpleline"
+    },
+    "family.montserrat": {
+      "value": "Montserrat",
+      "original": "Montserrat",
+      "type": "string",
+      "tier": "primitive",
+      "cssVar": "--family-montserrat"
+    },
+    "size.8": {
+      "value": 8,
+      "original": 8,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-8"
+    },
+    "size.10": {
+      "value": 10,
+      "original": 10,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-10"
+    },
+    "size.12": {
+      "value": 12,
+      "original": 12,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-12"
+    },
+    "size.14": {
+      "value": 14,
+      "original": 14,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-14"
+    },
+    "size.16": {
+      "value": 16,
+      "original": 16,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-16"
+    },
+    "size.18": {
+      "value": 18,
+      "original": 18,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-18"
+    },
+    "size.20": {
+      "value": 20,
+      "original": 20,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-20"
+    },
+    "size.24": {
+      "value": 24,
+      "original": 24,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-24"
+    },
+    "size.30": {
+      "value": 30,
+      "original": 30,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-30"
+    },
+    "size.36": {
+      "value": 36,
+      "original": 36,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-36"
+    },
+    "size.48": {
+      "value": 48,
+      "original": 48,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-48"
+    },
+    "size.64": {
+      "value": 64,
+      "original": 64,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-64"
+    },
+    "size.96": {
+      "value": 96,
+      "original": 96,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-96"
+    },
+    "size.128": {
+      "value": 128,
+      "original": 128,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--size-128"
+    },
+    "line-height.14": {
+      "value": 14,
+      "original": 14,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-14"
+    },
+    "line-height.16": {
+      "value": 16,
+      "original": 16,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-16"
+    },
+    "line-height.20": {
+      "value": 20,
+      "original": 20,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-20"
+    },
+    "line-height.22": {
+      "value": 22,
+      "original": 22,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-22"
+    },
+    "line-height.24": {
+      "value": 24,
+      "original": 24,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-24"
+    },
+    "line-height.26": {
+      "value": 26,
+      "original": 26,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-26"
+    },
+    "line-height.30": {
+      "value": 30,
+      "original": 30,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-30"
+    },
+    "line-height.36": {
+      "value": 36,
+      "original": 36,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-36"
+    },
+    "line-height.40": {
+      "value": 40,
+      "original": 40,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-40"
+    },
+    "line-height.42": {
+      "value": 42,
+      "original": 42,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-42"
+    },
+    "line-height.56": {
+      "value": 56,
+      "original": 56,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-56"
+    },
+    "line-height.72": {
+      "value": 72,
+      "original": 72,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-72"
+    },
+    "line-height.104": {
+      "value": 104,
+      "original": 104,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-104"
+    },
+    "line-height.132": {
+      "value": 132,
+      "original": 132,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--line-height-132"
+    },
+    "letter-spacing.tightest": {
+      "value": -2,
+      "original": -2,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-tightest"
+    },
+    "letter-spacing.tighter": {
+      "value": -0.699999988079071,
+      "original": -0.699999988079071,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-tighter"
+    },
+    "letter-spacing.tight": {
+      "value": -0.30000001192092896,
+      "original": -0.30000001192092896,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-tight"
+    },
+    "letter-spacing.normal": {
+      "value": 0,
+      "original": 0,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-normal"
+    },
+    "letter-spacing.loose": {
+      "value": 0.10000000149011612,
+      "original": 0.10000000149011612,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-loose"
+    },
+    "letter-spacing.looser": {
+      "value": 0.11999999731779099,
+      "original": 0.11999999731779099,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-looser"
+    },
+    "letter-spacing.loosest": {
+      "value": 0.30000001192092896,
+      "original": 0.30000001192092896,
+      "type": "number",
+      "tier": "primitive",
+      "cssVar": "--letter-spacing-loosest"
+    },
     "space.0": {
       "value": "0px",
       "original": "0px",

@@ -1,0 +1,722 @@
+{
+  "kiosk": {
+    "space": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "12": {
+        "$type": "number",
+        "$value": 48
+      },
+      "14": {
+        "$type": "number",
+        "$value": 56
+      },
+      "16": {
+        "$type": "number",
+        "$value": 64
+      },
+      "20": {
+        "$type": "number",
+        "$value": 80
+      }
+    },
+    "inset": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "stack": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "inline": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "radius": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "full": {
+        "$type": "number",
+        "$value": 9999
+      }
+    }
+  },
+  "mobile": {
+    "space": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "12": {
+        "$type": "number",
+        "$value": 48
+      },
+      "14": {
+        "$type": "number",
+        "$value": 56
+      },
+      "16": {
+        "$type": "number",
+        "$value": 64
+      },
+      "20": {
+        "$type": "number",
+        "$value": 80
+      }
+    },
+    "inset": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "stack": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "inline": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "radius": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "full": {
+        "$type": "number",
+        "$value": 9999
+      }
+    }
+  },
+  "tablet": {
+    "space": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "12": {
+        "$type": "number",
+        "$value": 48
+      },
+      "14": {
+        "$type": "number",
+        "$value": 56
+      },
+      "16": {
+        "$type": "number",
+        "$value": 64
+      },
+      "20": {
+        "$type": "number",
+        "$value": 80
+      }
+    },
+    "inset": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "stack": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "inline": {
+      "0": {
+        "$type": "number",
+        "$value": "{space.0}"
+      },
+      "1": {
+        "$type": "number",
+        "$value": "{space.1}"
+      },
+      "2": {
+        "$type": "number",
+        "$value": "{space.2}"
+      },
+      "3": {
+        "$type": "number",
+        "$value": "{space.3}"
+      },
+      "4": {
+        "$type": "number",
+        "$value": "{space.4}"
+      },
+      "5": {
+        "$type": "number",
+        "$value": "{space.5}"
+      },
+      "6": {
+        "$type": "number",
+        "$value": "{space.6}"
+      },
+      "8": {
+        "$type": "number",
+        "$value": "{space.8}"
+      },
+      "12": {
+        "$type": "number",
+        "$value": "{space.12}"
+      },
+      "14": {
+        "$type": "number",
+        "$value": "{space.14}"
+      },
+      "16": {
+        "$type": "number",
+        "$value": "{space.16}"
+      },
+      "20": {
+        "$type": "number",
+        "$value": "{space.20}"
+      }
+    },
+    "radius": {
+      "0": {
+        "$type": "number",
+        "$value": 0
+      },
+      "1": {
+        "$type": "number",
+        "$value": 4
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16
+      },
+      "5": {
+        "$type": "number",
+        "$value": 20
+      },
+      "6": {
+        "$type": "number",
+        "$value": 24
+      },
+      "8": {
+        "$type": "number",
+        "$value": 32
+      },
+      "full": {
+        "$type": "number",
+        "$value": 9999
+      }
+    }
+  }
+}

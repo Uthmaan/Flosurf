@@ -1,0 +1,154 @@
+{
+  "family": {
+    "montserrat": {
+      "$type": "string",
+      "$value": "Montserrat"
+    }
+  },
+  "size": {
+    "8": {
+      "$type": "number",
+      "$value": 8
+    },
+    "10": {
+      "$type": "number",
+      "$value": 10
+    },
+    "12": {
+      "$type": "number",
+      "$value": 12
+    },
+    "14": {
+      "$type": "number",
+      "$value": 14
+    },
+    "16": {
+      "$type": "number",
+      "$value": 16
+    },
+    "18": {
+      "$type": "number",
+      "$value": 18
+    },
+    "20": {
+      "$type": "number",
+      "$value": 20
+    },
+    "24": {
+      "$type": "number",
+      "$value": 24
+    },
+    "30": {
+      "$type": "number",
+      "$value": 30
+    },
+    "36": {
+      "$type": "number",
+      "$value": 36
+    },
+    "48": {
+      "$type": "number",
+      "$value": 48
+    },
+    "64": {
+      "$type": "number",
+      "$value": 64
+    },
+    "96": {
+      "$type": "number",
+      "$value": 96
+    },
+    "128": {
+      "$type": "number",
+      "$value": 128
+    }
+  },
+  "line-height": {
+    "14": {
+      "$type": "number",
+      "$value": 14
+    },
+    "16": {
+      "$type": "number",
+      "$value": 16
+    },
+    "20": {
+      "$type": "number",
+      "$value": 20
+    },
+    "22": {
+      "$type": "number",
+      "$value": 22
+    },
+    "24": {
+      "$type": "number",
+      "$value": 24
+    },
+    "26": {
+      "$type": "number",
+      "$value": 26
+    },
+    "30": {
+      "$type": "number",
+      "$value": 30
+    },
+    "36": {
+      "$type": "number",
+      "$value": 36
+    },
+    "40": {
+      "$type": "number",
+      "$value": 40
+    },
+    "42": {
+      "$type": "number",
+      "$value": 42
+    },
+    "56": {
+      "$type": "number",
+      "$value": 56
+    },
+    "72": {
+      "$type": "number",
+      "$value": 72
+    },
+    "104": {
+      "$type": "number",
+      "$value": 104
+    },
+    "132": {
+      "$type": "number",
+      "$value": 132
+    }
+  },
+  "letter-spacing": {
+    "tightest": {
+      "$type": "number",
+      "$value": -2
+    },
+    "tighter": {
+      "$type": "number",
+      "$value": -0.699999988079071
+    },
+    "tight": {
+      "$type": "number",
+      "$value": -0.30000001192092896
+    },
+    "normal": {
+      "$type": "number",
+      "$value": 0
+    },
+    "loose": {
+      "$type": "number",
+      "$value": 0.10000000149011612
+    },
+    "looser": {
+      "$type": "number",
+      "$value": 0.11999999731779099
+    },
+    "loosest": {
+      "$type": "number",
+      "$value": 0.30000001192092896
+    }
+  }
+}

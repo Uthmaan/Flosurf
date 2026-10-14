@@ -1,0 +1,99 @@
+{
+  "$schema": "https://flosurf.design/schemas/component-contract.json",
+  "name": "Checkbox",
+  "description": "Flo production Checkbox component generated from uSpec Figma extraction.",
+  "category": "form-controls",
+  "interactive": true,
+  "aria": {
+    "role": "checkbox",
+    "requiredAttributes": [
+      "aria-checked",
+      "aria-disabled"
+    ],
+    "optionalAttributes": [
+      "aria-busy",
+      "aria-describedby"
+    ],
+    "keyboard": {
+      "Space": "Toggles checked state (or clears indeterminate)",
+      "Tab": "Moves focus to/from control with visible focus ring"
+    }
+  },
+  "axes": {
+    "checked": [
+      false,
+      true
+    ],
+    "indeterminate": [
+      false,
+      true
+    ],
+    "size": [
+      "sm",
+      "md"
+    ]
+  },
+  "stateMatrix": {
+    "default": {
+      "unchecked": {
+        "bg": "var(--core-neutral-subtle-default, var(--color-bg-surface-raised))",
+        "border": "var(--border-utility-neutral-strong, var(--color-border-default))",
+        "icon": "transparent"
+      },
+      "checked": {
+        "bg": "var(--core-brand-gratitude-default, var(--color-bg-action-primary-default))",
+        "border": "transparent",
+        "icon": "var(--icon-neutral-default, var(--color-fg-on-action))"
+      }
+    },
+    "hover": {
+      "unchecked": {
+        "bg": "var(--core-neutral-subtle-hover, var(--color-bg-surface-sunken))",
+        "border": "var(--border-utility-constructive-strong, var(--color-border-focus))",
+        "icon": "transparent"
+      },
+      "checked": {
+        "bg": "var(--core-brand-gratitude-hover, var(--color-bg-action-primary-hover))",
+        "border": "transparent",
+        "icon": "var(--icon-neutral-default, var(--color-fg-on-action))"
+      }
+    },
+    "focus-visible": {
+      "focusRing": "2px solid var(--border-utility-constructive-strong, var(--color-border-focus))",
+      "focusRingOffset": "2px"
+    },
+    "active": {
+      "unchecked": {
+        "bg": "var(--core-brand-gratitude-disabled, var(--color-bg-action-primary-disabled))",
+        "border": "var(--border-utility-constructive-strong, var(--color-border-focus))",
+        "icon": "transparent"
+      },
+      "checked": {
+        "bg": "var(--core-brand-gratitude-pressed, var(--color-bg-action-primary-active))",
+        "border": "transparent",
+        "icon": "var(--icon-neutral-default, var(--color-fg-on-action))"
+      }
+    },
+    "disabled": {
+      "bg": "var(--core-neutral-subtle-disabled, var(--color-bg-surface-sunken))",
+      "border": "var(--border-utility-neutral-strong, var(--color-border-subtle))",
+      "icon": "var(--text-neutral-disabled, var(--color-fg-disabled))",
+      "cursor": "not-allowed"
+    },
+    "loading": {
+      "spinner": "var(--core-brand-gratitude-default, var(--color-bg-action-primary-default))",
+      "cursor": "wait",
+      "ariaBusy": true
+    }
+  },
+  "typography": {
+    "label": "var(--text-neutral-default, var(--color-fg-default))",
+    "supporting": "var(--text-neutral-subtle, var(--color-fg-muted))",
+    "count": "var(--text-neutral-subtle, var(--color-fg-muted))"
+  },
+  "sourceExtraction": {
+    "tool": "uSpec Extract 2.7.0",
+    "figmaComponentSetId": "14542:21769",
+    "totalVariants": 15
+  }
+}

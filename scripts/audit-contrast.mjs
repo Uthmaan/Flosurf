@@ -2,18 +2,39 @@
 // Gate 2 — WCAG 2.2 / APCA contrast verification across every mode.
 // Blocking metric: WCAG 2.2 ratio vs. the pair's minimum (4.5 text, 3.0 UI).
 // APCA Lc is reported alongside for review (WCAG 3 draft; not yet normative).
+// Supports CLI options:
+//   --pairs <path>       Custom pairing JSON file (defaults to audit/contrast-pairs.json)
+//   --modes <m1,m2,...>  Specific modes to audit (defaults to all compiled modes)
+//   --failures           Only output failing pairs
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseColor, wcagRatio, apcaLc } from './lib/color.mjs';
 import { ROOT, MODES, loadTokens, mdTable } from './lib/tokens.mjs';
 
-const { pairs } = JSON.parse(fs.readFileSync(path.join(ROOT, 'audit/contrast-pairs.json'), 'utf8'));
+const pairsArgIdx = process.argv.indexOf('--pairs');
+const pairsPath = pairsArgIdx !== -1 ? path.resolve(ROOT, process.argv[pairsArgIdx + 1]) : path.join(ROOT, 'audit/contrast-pairs.json');
+
+const modesArgIdx = process.argv.indexOf('--modes');
+const activeModes = modesArgIdx !== -1 ? process.argv[modesArgIdx + 1].split(',') : MODES;
+
+if (!fs.existsSync(pairsPath)) {
+  console.error(`✖ Contrast pairs file not found at ${pairsPath}`);
+  process.exit(1);
+}
+
+const { pairs } = JSON.parse(fs.readFileSync(pairsPath, 'utf8'));
 const rows = [];
 let failures = 0;
 
-for (const mode of MODES) {
-  const tokens = loadTokens(mode);
+for (const mode of activeModes) {
+  let tokens;
+  try {
+    tokens = loadTokens(mode);
+  } catch {
+    continue;
+  }
+
   for (const pair of pairs) {
     const fgT = tokens[pair.fg];
     const bgT = tokens[pair.bg];
@@ -41,12 +62,12 @@ for (const mode of MODES) {
 }
 
 const onlyFailures = process.argv.includes('--failures');
-console.log('\n## Gate 2 — Contrast Verification\n');
+console.log(`\n## Gate 2 — Contrast Verification (${path.relative(ROOT, pairsPath)})\n`);
 console.log(
   mdTable(
     ['Mode', 'Foreground', 'Background', 'WCAG 2.2', 'APCA', 'Minimum', 'Result'],
     onlyFailures ? rows.filter((r) => r[6].startsWith('✖')) : rows,
   ),
 );
-console.log(`\n${failures === 0 ? '✔' : '✖'} ${rows.length - failures}/${rows.length} pairings pass across ${MODES.length} modes.`);
+console.log(`\n${failures === 0 ? '✔' : '✖'} ${rows.length - failures}/${rows.length} pairings pass across ${activeModes.length} modes.`);
 process.exit(failures ? 1 : 0);

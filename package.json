@@ -16,6 +16,8 @@
     "audit": "npm run audit:hardcoded src && npm run audit:contrast && npm run audit:states && npm run audit:stress",
     "audit:demo": "node scripts/audit-hardcoded.mjs examples/violations",
     "ci": "npm run build && npm run audit",
+    "tokens:ingest": "node scripts/ingest-figma-tokens.mjs",
+    "audit:flo:contrast": "node scripts/audit-contrast.mjs --pairs audit/flo-contrast-pairs.json --modes day,night",
     "visualizer": "open visualizer/index.html",
     "serve": "node scripts/serve.mjs"
   },

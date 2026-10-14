@@ -11,8 +11,29 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, mdTable } from './lib/tokens.mjs';
 
-const srcDir = path.join(ROOT, 'src/components');
-const files = fs.readdirSync(srcDir).filter((f) => f.endsWith('.tsx') || f.endsWith('.jsx'));
+const targetDir = process.argv[2] ? path.resolve(ROOT, process.argv[2]) : path.join(ROOT, 'src/components');
+
+function collectComponentFiles(dir) {
+  const results = [];
+  if (!fs.existsSync(dir)) return results;
+  const stat = fs.statSync(dir);
+  if (!stat.isDirectory()) return [dir];
+
+  for (const item of fs.readdirSync(dir)) {
+    const full = path.join(dir, item);
+    const subStat = fs.statSync(full);
+    if (subStat.isDirectory()) {
+      if (item !== 'node_modules' && item !== '.git' && item !== 'dist') {
+        results.push(...collectComponentFiles(full));
+      }
+    } else if (/\.(tsx|jsx|html|vue|svelte)$/.test(item)) {
+      results.push(full);
+    }
+  }
+  return results;
+}
+
+const files = collectComponentFiles(targetDir);
 
 const STRESS_WORDS = [
   'Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz', // German
@@ -23,8 +44,8 @@ const STRESS_WORDS = [
 const results = [];
 let failures = 0;
 
-for (const file of files) {
-  const filePath = path.join(srcDir, file);
+for (const filePath of files) {
+  const relPath = path.relative(ROOT, filePath);
   const content = fs.readFileSync(filePath, 'utf8');
 
   // Check 1: Fixed height anti-pattern
@@ -50,16 +71,16 @@ for (const file of files) {
   let flexStatus = isFlex ? '✔ Fluid flex layout' : 'N/A';
 
   results.push([
-    file,
+    relPath,
     zoomStatus,
     'Survives 300% scaling (fluid bounds)',
     clippingStatus,
     STRESS_WORDS[0].slice(0, 24) + '...',
-    '✔ PASS',
+    zoomStatus.startsWith('✖') ? '✖ FAIL' : '✔ PASS',
   ]);
 }
 
-console.log('\n## Gate 4 — Layout & Stress Test (300% Zoom & Localization)\n');
+console.log(`\n## Gate 4 — Layout & Stress Test (300% Zoom & Localization) [${path.relative(ROOT, targetDir)}]\n`);
 console.log(
   mdTable(
     [
@@ -75,7 +96,7 @@ console.log(
 );
 
 if (failures === 0) {
-  console.log(`\n✔ PASS: All ${results.length} components passed Gate 4 Layout & Stress verification.\n`);
+  console.log(`\n✔ PASS: All ${results.length} component(s) passed Gate 4 Layout & Stress verification.\n`);
   process.exit(0);
 } else {
   console.log(`\n✖ FAIL: ${failures} component(s) violated Gate 4 layout stress criteria.\n`);
