@@ -92,6 +92,43 @@ public enum FlosurfColor {
     public static let cardContainerBorder = Color("card-container-border", bundle: .module)
     public static let cardTitleFg = Color("card-title-fg", bundle: .module)
     public static let cardBodyFg = Color("card-body-fg", bundle: .module)
+    public static let inputDefaultBgDefault = Color("input-default-bg-default", bundle: .module)
+    public static let inputDefaultBgHover = Color("input-default-bg-hover", bundle: .module)
+    public static let inputDefaultBgFocusVisible = Color("input-default-bg-focus-visible", bundle: .module)
+    public static let inputDefaultBgActive = Color("input-default-bg-active", bundle: .module)
+    public static let inputDefaultBgDisabled = Color("input-default-bg-disabled", bundle: .module)
+    public static let inputDefaultBgLoading = Color("input-default-bg-loading", bundle: .module)
+    public static let inputDefaultFgDefault = Color("input-default-fg-default", bundle: .module)
+    public static let inputDefaultFgHover = Color("input-default-fg-hover", bundle: .module)
+    public static let inputDefaultFgFocusVisible = Color("input-default-fg-focus-visible", bundle: .module)
+    public static let inputDefaultFgActive = Color("input-default-fg-active", bundle: .module)
+    public static let inputDefaultFgDisabled = Color("input-default-fg-disabled", bundle: .module)
+    public static let inputDefaultFgLoading = Color("input-default-fg-loading", bundle: .module)
+    public static let inputDefaultBorderDefault = Color("input-default-border-default", bundle: .module)
+    public static let inputDefaultBorderHover = Color("input-default-border-hover", bundle: .module)
+    public static let inputDefaultBorderFocusVisible = Color("input-default-border-focus-visible", bundle: .module)
+    public static let inputDefaultBorderActive = Color("input-default-border-active", bundle: .module)
+    public static let inputDefaultBorderDisabled = Color("input-default-border-disabled", bundle: .module)
+    public static let inputDefaultBorderLoading = Color("input-default-border-loading", bundle: .module)
+    public static let inputErrorBgDefault = Color("input-error-bg-default", bundle: .module)
+    public static let inputErrorBgHover = Color("input-error-bg-hover", bundle: .module)
+    public static let inputErrorBgFocusVisible = Color("input-error-bg-focus-visible", bundle: .module)
+    public static let inputErrorBgActive = Color("input-error-bg-active", bundle: .module)
+    public static let inputErrorBgDisabled = Color("input-error-bg-disabled", bundle: .module)
+    public static let inputErrorBgLoading = Color("input-error-bg-loading", bundle: .module)
+    public static let inputErrorFgDefault = Color("input-error-fg-default", bundle: .module)
+    public static let inputErrorFgHover = Color("input-error-fg-hover", bundle: .module)
+    public static let inputErrorFgFocusVisible = Color("input-error-fg-focus-visible", bundle: .module)
+    public static let inputErrorFgActive = Color("input-error-fg-active", bundle: .module)
+    public static let inputErrorFgDisabled = Color("input-error-fg-disabled", bundle: .module)
+    public static let inputErrorFgLoading = Color("input-error-fg-loading", bundle: .module)
+    public static let inputErrorBorderDefault = Color("input-error-border-default", bundle: .module)
+    public static let inputErrorBorderHover = Color("input-error-border-hover", bundle: .module)
+    public static let inputErrorBorderFocusVisible = Color("input-error-border-focus-visible", bundle: .module)
+    public static let inputErrorBorderActive = Color("input-error-border-active", bundle: .module)
+    public static let inputErrorBorderDisabled = Color("input-error-border-disabled", bundle: .module)
+    public static let inputErrorBorderLoading = Color("input-error-border-loading", bundle: .module)
+    public static let inputFocusRingColor = Color("input-focus-ring-color", bundle: .module)
 }
 
 public enum FlosurfDimension {
@@ -148,4 +185,17 @@ public enum FlosurfDimension {
     public static let cardContainerGap: CGFloat = 16
     public static let cardTitleSize: CGFloat = 20
     public static let cardBodySize: CGFloat = 16
+    public static let inputPaddingXSm: CGFloat = 12
+    public static let inputPaddingXMd: CGFloat = 16
+    public static let inputPaddingXLg: CGFloat = 24
+    public static let inputPaddingYSm: CGFloat = 4
+    public static let inputPaddingYMd: CGFloat = 8
+    public static let inputPaddingYLg: CGFloat = 12
+    public static let inputMinHeightSm: CGFloat = 32
+    public static let inputMinHeightMd: CGFloat = 40
+    public static let inputMinHeightLg: CGFloat = 48
+    public static let inputRadius: CGFloat = 8
+    public static let inputBorderWidth: CGFloat = 1
+    public static let inputFocusRingWidth: CGFloat = 2
+    public static let inputFocusRingOffset: CGFloat = 2
 }

@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-audit:
     name: Build Multi-Mode Tokens & Run Audit Gates
@@ -36,6 +41,9 @@ jobs:
       - name: Gate 3 — WAI-ARIA & State Matrix Contract
         run: npm run audit:states
 
+      - name: Gate 4 — Layout & Stress Test (300% Zoom & Localization)
+        run: npm run audit:stress
+
       - name: Verify Visualizer Integrity
         run: |
           test -s visualizer/index.html
@@ -49,3 +57,18 @@ jobs:
             dist/
             visualizer/index.html
           retention-days: 30
+
+      - name: Setup GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'visualizer'
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        id: deployment
+        uses: actions/deploy-pages@v4

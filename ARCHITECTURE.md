@@ -5,64 +5,75 @@ Flosurf replaces third-party subscription aggregators (`designsystems.surf` Pro 
 - **W3C Design Token Community Group (DTCG) Taxonomy**: Strict 3-tier separation of concerns (Primitives &rarr; Semantic &rarr; Component).
 - **Multi-Mode Theming Engine**: Native compile-time and runtime switching across `light`, `dark`, and `high-contrast` modes.
 - **Style Dictionary v4 Pipeline**: Cross-platform distribution (CSS custom properties, Tailwind v4 theme, Tailwind v3 preset, iOS Swift & Asset Catalogs, Android XML).
-- **Automated CI/CD Audit Gates**: Zero hardcoded hex/px linter with OKLab Delta-E auto-mapping, WCAG 2.2 / APCA contrast verification, and state matrix contract validation.
-- **Local Agentic Skills & REA MCP Integration**: Native Antigravity IDE skills (`audit-system`, `spec-generator`) and reverse-engineering capabilities (`morluto/rea`).
+- **Automated CI/CD 4-Stage Audit Gates**: Zero hardcoded hex/px linter, WCAG 2.2 / APCA contrast verification, state matrix contract validation, and 300% zoom / long-string layout stress testing.
+- **Upstream & Downstream Agent Workflows**: Integration with `redongreen/uSpec` (upstream Figma contract extraction) and `morluto/rea` (downstream runtime reverse engineering).
 
 ---
 
-## 2. 3-Tier W3C Token Taxonomy
+## 2. End-to-End Tooling Map: How Everything Fits (Zero Duplicate Jobs)
+
+A common point of confusion in modern design systems is knowing which tool owns which phase. Flosurf establishes strict non-overlapping boundaries:
+
+| Tool | Stage | Input | Output | Distinct Responsibility |
+| :--- | :--- | :--- | :--- | :--- |
+| **`uSpec`** (`redongreen/uSpec`) | **Upstream Design Capture** | Figma designs via `uSpec Extract` | Canonical `.json` contract & `.md` spec | Translates visual Figma components into formal API, anatomy, color, and voice specifications. Runs forward from design to spec. |
+| **`REA`** (`morluto/rea`) | **Competitive Reverse Engineering** | 3rd-party apps (Notion, Linear, Slack) | Extracted CSS property maps & focus state machines | Inspects compiled web, Electron, or native bundles when no Figma files exist. Runs backward from compiled apps to tokens. |
+| **`Flosurf DTCG Core`** | **Single Source of Truth** | `tokens/` JSON files | W3C DTCG Token Graph | Authoritative hierarchy of brand primitives, multi-mode semantic aliases, and scoped component tokens. |
+| **`Style Dictionary v4`** | **Cross-Platform Compiler** | `tokens/` | `dist/` (CSS, Tailwind, iOS, Android) | Compiles the token graph into target platform artifacts. Runs during CI or local builds. |
+| **`Flosurf Component Library`** | **UI Implementation** | Token CSS variables | `src/components/` (Button, Card, Input) | Production UI primitives built with zero hardcoded values and strict WAI-ARIA compliance. |
+| **`Flosurf 4-Stage CI Gates`** | **Automated Governance** | Source code & compiled tokens | Blocking CI Pass/Fail | Enforces the design system contract on every commit so bad code never merges. |
+| **`Flosurf Visualizer`** | **Inspection & Sandbox** | Pre-compiled distribution | Localhost / GitHub Pages | Interactive UI for inspecting the token graph, testing theme switching, and live component sandboxing. |
+
+```mermaid
+flowchart TD
+    subgraph Upstream ["1. Upstream Design Capture & Reverse Engineering"]
+        Figma["Figma Canvas"] -->|uSpec Extract Plugin| USpec["uSpec Orchestrator (_base.json)"]
+        USpec -->|Canonical Contract| CompSpec["Component Spec (.json / .md)"]
+        ThirdParty["Production Apps (Notion, Linear)"] -->|REA MCP Server| REA["REA Agent Engine"]
+        REA -->|Extracted Focus & Theme Patterns| ReverseTokens["Extracted Patterns"]
+    end
+
+    subgraph TokenCore ["2. Flosurf Token Engine (W3C DTCG)"]
+        CompSpec & ReverseTokens --> Tokens["tokens/ (Primitives -> Semantic -> Component)"]
+        Tokens -->|Style Dictionary v4| SD["Compiler Pipeline (build-tokens.mjs)"]
+        SD --> CSS["Web CSS (tokens.css, theme-dark.css)"]
+        SD --> TW["Tailwind v4 (@theme) & v3 (preset.cjs)"]
+        SD --> iOS["iOS Swift & Asset Catalogs (.xcassets)"]
+        SD --> Android["Android XML (values, values-night)"]
+    end
+
+    subgraph ComponentAuthoring ["3. UI Component Authoring"]
+        CSS --> Components["src/components/ (Button, Card, Input)"]
+        Skills["Antigravity Skills (create-component, spec-generator)"] --> Components
+    end
+
+    subgraph CIGates ["4. Automated Pre-Handoff 4-Stage Gates"]
+        Components --> G1["Gate 1: Zero Hex/Px Linter (Delta-E Suggestions)"]
+        G1 --> G2["Gate 2: WCAG 2.2 AA Contrast Matrix (3 Modes)"]
+        G2 --> G3["Gate 3: State Matrix Completeness (6 States)"]
+        G3 --> G4["Gate 4: 300% Zoom & Stress Test (Localization)"]
+        G4 --> CI["GitHub Actions CI (npm run ci)"]
+    end
+
+    subgraph Distribution ["5. Distribution & Visualizer"]
+        CI --> Dist["Committed dist/ (Zero Local Build Needed)"]
+        CI --> Pages["Live GitHub Pages Visualizer"]
+    end
+```
+
+---
+
+## 3. 3-Tier W3C Token Taxonomy
 
 | Tier | Layer | Purpose | Naming Pattern | Example Token | Mode Switching |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Tier 1** | **Primitive (Core)** | Context-agnostic brand palette, spacing scale, typographic curves. | `{category}.{scale}.{variant}` | `color.indigo.600` (`#4F46E5`), `space.400` (`16px`) | **Single mode** (Hidden from publishing) |
 | **Tier 2** | **Semantic (Alias)** | Context-aware intent. Switches across modes dynamically. | `{category}.{intent}.{role}.{state}` | `color.bg.action.primary.default` | **Light / Dark / High-Contrast** |
-| **Tier 3** | **Component (Scoped)** | Scoped to visual primitives (Button, Card, Input). | `{component}.{element}.{property}.{state}` | `button.primary.bg.hover` | Inherits from Tier 2 |
-
-### Context Flow Diagram
-```mermaid
-flowchart LR
-    subgraph T1 ["Tier 1: Primitives (Context Agnostic)"]
-        P1["color.slate.50 (#F8FAFC)"]
-        P2["color.slate.900 (#0F172A)"]
-        P3["color.indigo.600 (#4F46E5)"]
-        P4["color.indigo.400 (#818CF8)"]
-        P5["space.400 (16px)"]
-    end
-
-    subgraph T2 ["Tier 2: Semantic Tokens (Mode Aware)"]
-        S1["color.bg.surface.default"]
-        S2["color.bg.action.primary.default"]
-        S3["layout.padding.control.x.md"]
-    end
-
-    subgraph T3 ["Tier 3: Component Scoped"]
-        C1["card.container.bg"]
-        C2["button.primary.bg.default"]
-        C3["button.primary.padding.x"]
-    end
-
-    subgraph T4 ["Tier 4: AI & CI Audit Gates"]
-        G1["Gate 1: Zero Raw Hex/Px Linter"]
-        G2["Gate 2: WCAG 2.2 / APCA Contrast >= 4.5:1"]
-        G3["Gate 3: WAI-ARIA & State Matrix Check"]
-    end
-
-    P1 -->|Light Mode| S1
-    P2 -->|Dark Mode| S1
-    P3 -->|Light Mode| S2
-    P4 -->|Dark Mode| S2
-    P5 --> S3
-
-    S1 --> C1
-    S2 --> C2
-    S3 --> C3
-
-    C1 & C2 & C3 --> G1 --> G2 --> G3
-```
+| **Tier 3** | **Component (Scoped)** | Scoped to visual primitives (Button, Card, Input). | `{component}.{element}.{property}.{state}` | `button.primary.bg.hover`, `input.default.border.focus` | Inherits from Tier 2 |
 
 ---
 
-## 3. Pre-Handoff 4-Stage Architectural Gates
+## 4. Pre-Handoff 4-Stage Architectural Gates
 
 ### Gate 1: Zero Hardcoded Value Linter
 - **Rule**: Zero raw hex colors (`#hex`), `rgb(...)`, or raw pixel dimensions in component styles.
@@ -82,24 +93,13 @@ flowchart LR
   4. `active`
   5. `disabled`
   6. `loading`
-- **WAI-ARIA Pattern**: Interactive elements must implement appropriate roles (`role="button"`), `aria-busy`, and `aria-disabled`.
+- **WAI-ARIA Pattern**: Interactive elements must implement appropriate roles (`role="button"`, `role="textbox"`), `aria-busy`, `aria-disabled`, and `aria-invalid`.
 - **Run**: `npm run audit:states`
 
 ### Gate 4: Layout & Stress Test
-- Tested at 300% text zoom and long-string localization (German/Finnish compound words) to guarantee zero layout truncation or overflow.
-
----
-
-## 4. Reverse Engineering via REA (`morluto/rea`)
-REA connects directly to Antigravity IDE via MCP to inspect third-party apps, Storybook bundles, or Electron binaries to reverse engineer tokens, theme machines, and focus ring systems.
-
-### REA Agent Playbook
-```text
-@rea Inspect the target bundle at /Applications/TargetApp.app (or local web build directory).
-Trace the theme initialization module, extract the full CSS custom property token map,
-and document the state machine used for focus-ring accessibility and dark-mode switching.
-Pipe the extracted findings into a local rule file.
-```
+- **Rule**: Root containers must use fluid auto-height or `minHeight` instead of fixed `height: ...px` to survive **300% text zoom**.
+- **Localization Resilience**: Tested against German compound words (e.g. `Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz`) to ensure no clipping or layout breakdown.
+- **Run**: `npm run audit:stress`
 
 ---
 

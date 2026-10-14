@@ -1,0 +1,106 @@
+{
+  "input": {
+    "$description": "Tier 3 Input component tokens with 6-state interactive matrix and validation states.",
+    "$extensions": {
+      "com.flosurf": {
+        "interactive": true,
+        "pattern": "textbox",
+        "wai-aria": "https://www.w3.org/WAI/ARIA/apg/patterns/textbox/",
+        "source": "src/components/Input",
+        "requiredAria": ["aria-invalid", "aria-disabled", "aria-describedby"]
+      }
+    },
+    "default": {
+      "bg": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.surface.raised}" },
+        "hover": { "$value": "{color.bg.surface.raised}" },
+        "focus-visible": { "$value": "{color.bg.surface.raised}" },
+        "active": { "$value": "{color.bg.surface.raised}" },
+        "disabled": { "$value": "{color.bg.surface.sunken}" },
+        "loading": { "$value": "{color.bg.surface.raised}" }
+      },
+      "fg": {
+        "$type": "color",
+        "default": { "$value": "{color.fg.default}" },
+        "hover": { "$value": "{color.fg.default}" },
+        "focus-visible": { "$value": "{color.fg.default}" },
+        "active": { "$value": "{color.fg.default}" },
+        "disabled": { "$value": "{color.fg.disabled}" },
+        "loading": { "$value": "{color.fg.muted}" }
+      },
+      "border": {
+        "$type": "color",
+        "default": { "$value": "{color.border.default}" },
+        "hover": { "$value": "{color.border.strong}" },
+        "focus-visible": { "$value": "{color.border.focus}" },
+        "active": { "$value": "{color.border.focus}" },
+        "disabled": { "$value": "{color.border.subtle}" },
+        "loading": { "$value": "{color.border.default}" }
+      }
+    },
+    "error": {
+      "bg": {
+        "$type": "color",
+        "default": { "$value": "{color.bg.feedback.danger.subtle}" },
+        "hover": { "$value": "{color.bg.feedback.danger.subtle}" },
+        "focus-visible": { "$value": "{color.bg.feedback.danger.subtle}" },
+        "active": { "$value": "{color.bg.feedback.danger.subtle}" },
+        "disabled": { "$value": "{color.bg.surface.sunken}" },
+        "loading": { "$value": "{color.bg.feedback.danger.subtle}" }
+      },
+      "fg": {
+        "$type": "color",
+        "default": { "$value": "{color.fg.default}" },
+        "hover": { "$value": "{color.fg.default}" },
+        "focus-visible": { "$value": "{color.fg.default}" },
+        "active": { "$value": "{color.fg.default}" },
+        "disabled": { "$value": "{color.fg.disabled}" },
+        "loading": { "$value": "{color.fg.muted}" }
+      },
+      "border": {
+        "$type": "color",
+        "default": { "$value": "{color.border.danger}" },
+        "hover": { "$value": "{color.border.danger}" },
+        "focus-visible": { "$value": "{color.border.danger}" },
+        "active": { "$value": "{color.border.danger}" },
+        "disabled": { "$value": "{color.border.subtle}" },
+        "loading": { "$value": "{color.border.danger}" }
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "x": {
+        "sm": { "$value": "{layout.padding.control.x.sm}" },
+        "md": { "$value": "{layout.padding.control.x.md}" },
+        "lg": { "$value": "{layout.padding.control.x.lg}" }
+      },
+      "y": {
+        "sm": { "$value": "{layout.padding.control.y.sm}" },
+        "md": { "$value": "{layout.padding.control.y.md}" },
+        "lg": { "$value": "{layout.padding.control.y.lg}" }
+      }
+    },
+    "min-height": {
+      "$type": "dimension",
+      "sm": { "$value": "{layout.control-height.sm}" },
+      "md": { "$value": "{layout.control-height.md}" },
+      "lg": { "$value": "{layout.control-height.lg}" }
+    },
+    "font": {
+      "size": {
+        "sm": { "$value": "{font.label.size.sm}" },
+        "md": { "$value": "{font.label.size.md}" },
+        "lg": { "$value": "{font.label.size.lg}" }
+      },
+      "family": { "$value": "{font.body.family}" }
+    },
+    "radius": { "$type": "dimension", "$value": "{radius.control}" },
+    "border-width": { "$type": "dimension", "$value": "{border.width.default}" },
+    "focus-ring": {
+      "color": { "$type": "color", "$value": "{color.border.focus}" },
+      "width": { "$type": "dimension", "$value": "{focus.ring.width}" },
+      "offset": { "$type": "dimension", "$value": "{focus.ring.offset}" }
+    }
+  }
+}
