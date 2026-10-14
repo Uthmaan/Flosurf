@@ -65,5 +65,5 @@ Run the pre-handoff verification suite before submitting:
 npm run audit:hardcoded src/{ComponentName}.tsx # Gate 1: Zero hardcoded hex/px
 npm run audit:contrast                          # Gate 2: Multi-mode WCAG contrast
 npm run audit:states                            # Gate 3: State matrix contract
-npm run audit:stress                            # Gate 4: 300% zoom & German localization
+npm run audit:stress                            # Gate 4: 300% zoom & South African multi-language stress
 ```

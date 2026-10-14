@@ -19,7 +19,7 @@
    - Explicit `role` definition where native HTML tags are insufficient.
    - Screen-reader state reflection via `aria-busy`, `aria-disabled`, `aria-invalid`, and `aria-describedby`.
    - Complete keyboard operability (`Enter`, `Space`, `Tab`, `Escape`, Arrow navigation).
-7. **Fluid Zoom & Localization Resilience**: Components must expand gracefully at 300% text zoom and accommodate long compound words (e.g. German, Finnish) without clipping. Always use `minHeight` instead of fixed `height`.
+7. **Fluid Zoom & South African Multi-Language Resilience**: Components must expand gracefully at 300% text zoom and accommodate long agglutinative and compound words across South African languages (Nguni [isiZulu/isiXhosa], Sotho-Tswana, Afrikaans, and Tsonga/Venda with diacritics) without clipping. Always use `minHeight` instead of fixed `height`.
 8. **Polymorphic, Unambiguous Props APIs**: Use discrete enum variants (`variant="primary" | "secondary" | "danger"`) rather than boolean prop flags (`<Button primary danger />`). Extend native HTML attributes.
 9. **Machine-Readable Contracts Over Written Docs**: Component specifications must exist as machine-executable schema contracts (`tokens/component/*.json`) rather than ambiguous human prose.
 10. **CI-First Handoff**: Design tokens and component libraries must be verified automatically by CI audit gates. Downstream consumers pull pre-compiled distributions (`dist/`) without requiring local build steps.

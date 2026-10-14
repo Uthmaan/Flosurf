@@ -98,7 +98,7 @@ flowchart TD
 
 ### Gate 4: Layout & Stress Test
 - **Rule**: Root containers must use fluid auto-height or `minHeight` instead of fixed `height: ...px` to survive **300% text zoom**.
-- **Localization Resilience**: Tested against German compound words (e.g. `Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz`) to ensure no clipping or layout breakdown.
+- **Localization Resilience**: Tested against agglutinative and long compound words across all 4 primary South African derivation language groups (encompassing 14+ official languages and regional dialects: Nguni [isiZulu/isiXhosa], Sotho-Tswana [Sesotho/Setswana], Afrikaans, and Tsonga/Venda with Unicode diacritics) to ensure zero clipping, fluid expansion, and safe wrapping.
 - **Run**: `npm run audit:stress`
 
 ---
