@@ -1,0 +1,106 @@
+{
+  "$schema": "https://flosurf.dev/schema/config.json",
+  "name": "Flosurf Design System Platform",
+  "version": "1.0.0",
+  "whitelabel": {
+    "brandName": "Flö Design System",
+    "organization": "Dis-Chem",
+    "tagline": "Enterprise W3C 3-Tier Design System & Governance Platform",
+    "logo": {
+      "text": "F",
+      "gradient": "linear-gradient(135deg, #02A049, #00833D)"
+    },
+    "documentation": {
+      "title": "Flö Design System — Documentation & Governance Hub",
+      "sidebarTitle": "Flö Documentation",
+      "copyright": "© 2026 Dis-Chem Group. Open Source Flosurf Engine."
+    }
+  },
+  "sources": {
+    "figma": {
+      "fileKey": "2WYMjAMmQVU6qxsnzQysm0",
+      "variablesApi": true,
+      "tokensPath": "tokens/"
+    },
+    "uSpec": {
+      "contractsPath": "components/",
+      "specsPath": "specs/"
+    }
+  },
+  "tokens": {
+    "primitives": "tokens/primitives",
+    "semantic": "tokens/semantic",
+    "component": "tokens/component",
+    "modes": [
+      {
+        "id": "day",
+        "name": "☀️ Day",
+        "type": "light",
+        "description": "Flo Standard Day Mode (Gratitude G300 #02A049 on Nimbus N50 #EDEFE9)"
+      },
+      {
+        "id": "night",
+        "name": "🌑 Night",
+        "type": "dark",
+        "description": "Flo Standard Night Mode (Gratitude G300 #02A049 on Nimbus N800 #00100C)"
+      },
+      {
+        "id": "day-hc",
+        "name": "☀️ Day (High Contrast)",
+        "type": "light-hc",
+        "description": "Flo AAA High Contrast Day (Gratitude G500 #005F28 on White #FFFFFF, ≥7:1)"
+      },
+      {
+        "id": "night-hc",
+        "name": "🌑 Night (High Contrast)",
+        "type": "dark-hc",
+        "description": "Flo AAA High Contrast Night (Lumen L300 #A6EB2E on Black #000000, ≥13:1)"
+      }
+    ]
+  },
+  "exporters": {
+    "web": {
+      "css": "dist/css/index.css",
+      "tailwindPreset": "dist/tailwind/preset.cjs",
+      "tailwindTheme": "dist/tailwind/theme.css"
+    },
+    "mobile": {
+      "reactNative": "dist/react-native/tokens.js",
+      "tailwindPreset": "dist/tailwind/preset.cjs"
+    },
+    "native": {
+      "iosSwift": "dist/ios/FlosurfTokens.swift",
+      "iosAssets": "dist/ios/FlosurfTokens.xcassets",
+      "androidColors": "dist/android/values/flosurf_colors.xml",
+      "androidDimens": "dist/android/values/flosurf_dimens.xml"
+    }
+  },
+  "governance": {
+    "gates": {
+      "gate1_hardcoded": {
+        "enabled": true,
+        "name": "Gate 1: Zero Hardcoded Hex/Px",
+        "targetDirs": ["src"]
+      },
+      "gate2_contrast": {
+        "enabled": true,
+        "name": "Gate 2: WCAG 2.2 AA Contrast & APCA",
+        "pairsFile": "audit/contrast-pairs.json",
+        "minRatioNormal": 4.5,
+        "minRatioUI": 3.0
+      },
+      "gate3_states": {
+        "enabled": true,
+        "name": "Gate 3: 6-Stage State Matrix Contract",
+        "requiredStates": ["default", "hover", "focus-visible", "active", "disabled", "loading"],
+        "requiredAria": ["aria-disabled", "aria-busy"]
+      },
+      "gate4_stress": {
+        "enabled": true,
+        "name": "Gate 4: 300% Zoom & SA Multi-Language Stress",
+        "languages": ["zu", "xh", "af", "st", "ve"],
+        "zoomPercentage": 300
+      }
+    }
+  }
+}

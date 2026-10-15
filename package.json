@@ -7,18 +7,24 @@
   "engines": {
     "node": ">=22.19"
   },
+  "bin": {
+    "flosurf": "./bin/flosurf.mjs"
+  },
   "scripts": {
-    "build": "node build/build-tokens.mjs",
+    "flosurf": "node bin/flosurf.mjs",
+    "build": "node bin/flosurf.mjs build",
     "audit:hardcoded": "node scripts/audit-hardcoded.mjs src",
     "audit:contrast": "node scripts/audit-contrast.mjs",
     "audit:states": "node scripts/audit-states.mjs",
     "audit:stress": "node scripts/audit-stress.mjs",
-    "audit": "npm run audit:hardcoded src && npm run audit:contrast && npm run audit:states && npm run audit:stress",
-    "audit:demo": "node scripts/audit-hardcoded.mjs examples/violations",
-    "ci": "npm run build && npm run audit",
+    "audit": "node bin/flosurf.mjs audit",
+    "ci": "node bin/flosurf.mjs ci",
+    "export": "node bin/flosurf.mjs export",
+    "health": "node bin/flosurf.mjs health",
+    "sync": "node bin/flosurf.mjs sync",
     "tokens:ingest": "node scripts/ingest-figma-tokens.mjs",
     "audit:flo:contrast": "node scripts/audit-contrast.mjs --pairs audit/flo-contrast-pairs.json --modes day,night",
-    "visualizer": "open visualizer/index.html",
+    "docs": "node scripts/serve.mjs",
     "serve": "node scripts/serve.mjs"
   },
   "devDependencies": {
